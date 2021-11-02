@@ -5,7 +5,9 @@ module.exports = {
     es6: true,
     node: true,
   },
+  parser: 'vue-eslint-parser',
   extends: [
+    'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
@@ -28,6 +30,12 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
+    'vue/max-attributes-per-line': 0,
+    'vue/html-indent': 0,
+    'vue/html-closing-bracket-newline': 0,
+    'vue/html-self-closing': 0,
+    'vue/singleline-html-element-content-newline': 0,
+    'vue/multiline-html-element-content-newline': 0,
   },
 
   overrides: [
