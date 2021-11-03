@@ -11,12 +11,13 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'prettier'],
   parserOptions: {
     parser: '@typescript-eslint/parser',
   },
 
   rules: {
+    'prettier/prettier': 'error',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     '@typescript-eslint/explicit-module-boundary-types': 0,
@@ -36,6 +37,7 @@ module.exports = {
     'vue/html-self-closing': 0,
     'vue/singleline-html-element-content-newline': 0,
     'vue/multiline-html-element-content-newline': 0,
+    'vue/multi-word-component-names': 0,
   },
 
   overrides: [

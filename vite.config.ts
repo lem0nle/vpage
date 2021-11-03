@@ -2,6 +2,7 @@ import path from 'path'
 import { defineConfig } from 'vite'
 // plugins
 import Vue from '@vitejs/plugin-vue'
+import Pages from 'vite-plugin-pages'
 
 export default defineConfig({
   resolve: {
@@ -9,7 +10,5 @@ export default defineConfig({
       '@/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
-  plugins: [
-    Vue(),
-  ],
+  plugins: [Vue(), Pages()],
 })
