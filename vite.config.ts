@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 // plugins
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
+import Markdown from 'vite-plugin-md'
 
 export default defineConfig({
   resolve: {
@@ -10,5 +11,15 @@ export default defineConfig({
       '@/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
-  plugins: [Vue(), Pages()],
+  plugins: [
+    Vue({
+      include: [/\.vue$/, /\.md$/],
+    }),
+    Pages({
+      extensions: ['vue', 'md'],
+    }),
+    Markdown({
+      headEnabled: true,
+    }),
+  ],
 })
