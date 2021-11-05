@@ -6,7 +6,7 @@
     "preview": "vite preview --open",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,vue}\"",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src",
-    "tc": "tsc --noEmit",
+    "tc": "vue-tsc --noEmit",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -42,6 +42,7 @@
     "vite-plugin-vue-layouts": "^0.5.0",
     "vite-plugin-windicss": "^1.5.1",
     "vite-ssg": "^0.15.6",
+    "vue-tsc": "^0.28.10",
     "windicss": "^3.2.1"
   },
   "lint-staged": {
