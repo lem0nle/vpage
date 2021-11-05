@@ -8,7 +8,7 @@
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src",
     "tc": "vue-tsc --noEmit",
     "prepare": "husky install",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package --patch-dir .patches"
   },
   "dependencies": {
     "vue": "^3.2.21",

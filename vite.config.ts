@@ -23,10 +23,6 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
-    Pages({
-      extensions: ['vue', 'md'],
-    }),
-    Layouts(),
     Markdown({
       headEnabled: true,
       markdownItSetup(md) {
@@ -42,12 +38,30 @@ export default defineConfig({
       },
     }),
     WindiCSS(),
+    Icons(),
+
     Components({
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       exclude: [/\/node_modules\//, /\/.git\//],
       resolvers: [IconsResolver()],
+      dirs: [
+        'src/components',
+        // include all demo components
+        'examples/**/components',
+      ],
     }),
-    Icons(),
+    Pages({
+      extensions: ['vue', 'md'],
+      pagesDir: [
+        { dir: 'src/pages', baseRoute: '' },
+        // include demo pages
+        { dir: 'examples/personal/pages', baseRoute: 'demo/personal' },
+        { dir: 'examples/project/pages', baseRoute: 'demo/project' },
+      ],
+    }),
+    Layouts({
+      layoutsDir: 'src/layouts',
+    }),
   ],
 })
