@@ -22,7 +22,13 @@ jobs:
 
       - run: npm i --no-save
 
-      - run: npm run build
+      - name: Build for github.io Pages
+        run: npm run build
+        if: ${{ endsWith(github.event.repository.name, 'github.io') }}
+
+      - name: Build for Project Pages
+        run: BASE_URL=/${{ github.event.repository.name }}/ npm run build
+        if: ${{ !endsWith(github.event.repository.name, 'github.io') }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
