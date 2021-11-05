@@ -4,6 +4,8 @@ import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Markdown from 'vite-plugin-md'
+import Prism from 'markdown-it-prism'
+import LinkAttributes from 'markdown-it-link-attributes'
 
 export default defineConfig({
   resolve: {
@@ -20,6 +22,17 @@ export default defineConfig({
     }),
     Markdown({
       headEnabled: true,
+      markdownItSetup(md) {
+        // https://prismjs.com/
+        md.use(Prism)
+        md.use(LinkAttributes, {
+          pattern: /^https?:\/\//,
+          attrs: {
+            target: '_blank',
+            rel: 'noopener',
+          },
+        })
+      },
     }),
   ],
 })
