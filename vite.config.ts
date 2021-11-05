@@ -44,6 +44,7 @@ export default defineConfig({
     Components({
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      exclude: [/node_modules\//, /.git\//],
       resolvers: [IconsResolver()],
     }),
     Icons({
