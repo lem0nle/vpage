@@ -22,11 +22,7 @@ jobs:
 
       - run: npm i --no-save
 
-      - run: npx vite build --base=/${{ github.event.repository.name }}/
-        if: ${{ !endsWith(github.event.repository.name, 'github.io') }}
-
       - run: npm run build
-        if: ${{ endsWith(github.event.repository.name, 'github.io') }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
