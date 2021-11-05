@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 // plugins
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
+import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-md'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
@@ -21,6 +22,7 @@ export default defineConfig({
     Pages({
       extensions: ['vue', 'md'],
     }),
+    Layouts(),
     Markdown({
       headEnabled: true,
       markdownItSetup(md) {

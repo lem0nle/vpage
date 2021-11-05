@@ -3,6 +3,7 @@ import App from './App.vue'
 // plugins
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from 'virtual:generated-pages'
+import { setupLayouts } from 'virtual:generated-layouts'
 import { createHead } from '@vueuse/head'
 // style
 import 'virtual:windi.css'
@@ -13,7 +14,7 @@ const app = createApp(App)
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
+  routes: setupLayouts(routes),
 })
 app.use(router)
 

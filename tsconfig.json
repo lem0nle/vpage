@@ -12,7 +12,7 @@
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "strictNullChecks": true,
-    "types": ["vite-plugin-pages/client"],
+    "types": ["vite-plugin-pages/client", "vite-plugin-vue-layouts/client"],
     "paths": {
       "@/*": ["src/*"]
     }
