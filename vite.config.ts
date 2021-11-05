@@ -48,8 +48,6 @@ export default defineConfig({
       exclude: [/\/node_modules\//, /\/.git\//],
       resolvers: [IconsResolver()],
     }),
-    Icons({
-      autoInstall: true,
-    }),
+    Icons(),
   ],
 })
