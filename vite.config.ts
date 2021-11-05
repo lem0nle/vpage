@@ -46,6 +46,8 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       resolvers: [IconsResolver()],
     }),
-    Icons(),
+    Icons({
+      autoInstall: true,
+    }),
   ],
 })
