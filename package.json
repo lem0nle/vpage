@@ -2,13 +2,14 @@
   "private": true,
   "scripts": {
     "dev": "vite --port 3333 --open",
+    "build": "vite-ssg build",
+    "preview": "vite preview --open",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,vue}\"",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src",
     "tc": "tsc --noEmit",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@vueuse/head": "^0.6.0",
     "prism-theme-vars": "^0.2.2",
     "vue": "^3.2.21",
     "vue-router": "^4.0.12"
@@ -20,6 +21,9 @@
     "@typescript-eslint/eslint-plugin": "^5.3.0",
     "@typescript-eslint/parser": "^5.3.0",
     "@vitejs/plugin-vue": "^1.9.4",
+    "@vue/compiler-sfc": "^3.2.21",
+    "@vue/server-renderer": "^3.2.21",
+    "@vueuse/head": "^0.5.1",
     "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -37,6 +41,7 @@
     "vite-plugin-pages": "^0.18.2",
     "vite-plugin-vue-layouts": "^0.5.0",
     "vite-plugin-windicss": "^1.5.1",
+    "vite-ssg": "^0.15.6",
     "windicss": "^3.2.1"
   },
   "lint-staged": {
