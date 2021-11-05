@@ -1,0 +1,13 @@
+diff --git a/node_modules/vite-ssg/dist/index.js b/node_modules/vite-ssg/dist/index.js
+index 9d26fba..8cc1a49 100644
+--- a/node_modules/vite-ssg/dist/index.js
++++ b/node_modules/vite-ssg/dist/index.js
+@@ -58,7 +58,7 @@ function ViteSSG(App, routerOptions, fn, options = {}) {
+       next();
+     });
+     if (!client) {
+-      const route = (_b = (_a = context.routePath) != null ? _a : routerOptions.base) != null ? _b : "/";
++      const route = (_a = context.routePath) != null ? _a : "/";
+       router.push(route);
+       await router.isReady();
+       context.initialState = router.currentRoute.value.meta.state || {};

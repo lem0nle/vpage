@@ -7,7 +7,8 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,vue}\"",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src",
     "tc": "vue-tsc --noEmit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "prism-theme-vars": "^0.2.2",
@@ -32,6 +33,7 @@
     "lint-staged": "^11.2.6",
     "markdown-it-link-attributes": "^3.0.0",
     "markdown-it-prism": "^2.2.1",
+    "patch-package": "^6.4.7",
     "prettier": "^2.4.1",
     "typescript": "^4.4.4",
     "unplugin-icons": "^0.12.18",
@@ -41,7 +43,7 @@
     "vite-plugin-pages": "^0.18.2",
     "vite-plugin-vue-layouts": "^0.5.0",
     "vite-plugin-windicss": "^1.5.1",
-    "vite-ssg": "^0.15.4",
+    "vite-ssg": "^0.15.6",
     "vue-tsc": "^0.28.10",
     "windicss": "^3.2.1"
   },

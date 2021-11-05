@@ -8,4 +8,7 @@ import 'virtual:windi.css'
 import 'prism-theme-vars/base.css'
 import 'prism-theme-vars/themes/vitesse-light.css'
 
-export const createApp = ViteSSG(App, { routes: setupLayouts(routes) })
+export const createApp = ViteSSG(App, {
+  base: import.meta.env.BASE_URL,
+  routes: setupLayouts(routes),
+})
