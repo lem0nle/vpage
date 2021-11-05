@@ -6,6 +6,7 @@ import Pages from 'vite-plugin-pages'
 import Markdown from 'vite-plugin-md'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
+import WindiCSS from 'vite-plugin-windicss'
 
 export default defineConfig({
   resolve: {
@@ -34,5 +35,6 @@ export default defineConfig({
         })
       },
     }),
+    WindiCSS(),
   ],
 })

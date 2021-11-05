@@ -5,6 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import routes from 'virtual:generated-pages'
 import { createHead } from '@vueuse/head'
 // style
+import 'virtual:windi.css'
 import 'prism-theme-vars/base.css'
 import 'prism-theme-vars/themes/vitesse-light.css'
 
