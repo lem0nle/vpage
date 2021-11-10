@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "es2020",
-    "target": "es2017",
+    "module": "esnext",
+    "target": "es2016",
     "lib": ["dom", "esnext"],
     "outDir": "dist",
     "strict": true,
