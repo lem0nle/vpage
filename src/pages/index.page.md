@@ -1,8 +1,6 @@
 ---
 title: VPage | HOME
-meta:
-  - name: description
-    content: Markdown home page
+description: Markdown home page
 ---
 
 # Welcome 👏

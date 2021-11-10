@@ -11,7 +11,8 @@
     "format": "prettier --write \"{src,examples,_vpage}/**/*.{ts,tsx,js,jsx,vue}\"",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src examples _vpage",
     "tc": "vue-tsc --noEmit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "patch-package --patch-dir .patches"
   },
   "dependencies": {
     "@iconify/json": "^1.1.424",
@@ -33,6 +34,7 @@
     "lint-staged": "^11.2.6",
     "markdown-it-link-attributes": "^3.0.0",
     "markdown-it-prism": "^2.2.1",
+    "patch-package": "^6.4.7",
     "prettier": "^2.4.1",
     "prism-theme-vars": "^0.2.2",
     "rimraf": "^3.0.2",

@@ -6,15 +6,17 @@ import {
   PageContextBuiltIn,
 } from 'vite-plugin-ssr'
 
-export async function render(pageContext: PageContextBuiltIn) {
-  const { Page } = pageContext
+export async function render(ctx: PageContextBuiltIn) {
+  const { Page, pageExports } = ctx
 
   const app = createSSRApp({
     render: () => h(Page),
   })
   const appHtml = await renderToString(app)
 
-  const title = 'VPage'
+  // TODO: also try parse from documentProps; accurate type defs
+  const title =
+    (pageExports.frontmatter as Record<string, string>)?.title || 'VPage'
 
   const documentHtml = escapeInject`<!DOCTYPE html>
   <html lang="en">

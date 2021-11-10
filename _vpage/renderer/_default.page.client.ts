@@ -6,8 +6,7 @@ import { getPage } from 'vite-plugin-ssr/client'
 hydrate()
 
 async function hydrate() {
-  const pageContext = await getPage()
-  const { Page } = pageContext
+  const { Page } = await getPage()
   const app = createSSRApp({
     render: () => h(Page),
   })
