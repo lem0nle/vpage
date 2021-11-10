@@ -1,3 +1,3 @@
 <template>
-  <div>Personal Footer</div>
+  <div class="text-gray-300">Personal Footer</div>
 </template>

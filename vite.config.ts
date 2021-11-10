@@ -1,9 +1,8 @@
 import path from 'path'
 import { defineConfig } from 'vite'
 // plugins
+import SSR from 'vite-plugin-ssr/plugin'
 import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
-import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-md'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
@@ -13,18 +12,17 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 
 export default defineConfig({
-  base: process.env.BASE_URL || '/',
   resolve: {
     alias: {
       '@/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
   plugins: [
+    SSR(),
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
     Markdown({
-      headEnabled: true,
       markdownItSetup(md) {
         // https://prismjs.com/
         md.use(Prism)
@@ -38,8 +36,6 @@ export default defineConfig({
       },
     }),
     WindiCSS(),
-    Icons(),
-
     Components({
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
@@ -51,17 +47,6 @@ export default defineConfig({
         'examples/**/components',
       ],
     }),
-    Pages({
-      extensions: ['vue', 'md'],
-      pagesDir: [
-        { dir: 'src/pages', baseRoute: '' },
-        // include demo pages
-        { dir: 'examples/personal/pages', baseRoute: 'demo/personal' },
-        { dir: 'examples/project/pages', baseRoute: 'demo/project' },
-      ],
-    }),
-    Layouts({
-      layoutsDir: 'src/layouts',
-    }),
+    Icons(),
   ],
 })
