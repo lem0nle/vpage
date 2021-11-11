@@ -1,18 +1,14 @@
 import { createSSRApp, h } from 'vue'
-import { renderToString } from '@vue/server-renderer'
-import {
-  dangerouslySkipEscape,
-  escapeInject,
-  PageContextBuiltIn,
-} from 'vite-plugin-ssr'
+import { renderToNodeStream } from '@vue/server-renderer'
+import { escapeInject, PageContextBuiltIn } from 'vite-plugin-ssr'
 
-export async function render(ctx: PageContextBuiltIn) {
+export function render(ctx: PageContextBuiltIn) {
   const { Page, pageExports } = ctx
 
   const app = createSSRApp({
     render: () => h(Page),
   })
-  const appHtml = await renderToString(app)
+  const stream = renderToNodeStream(app)
 
   // TODO: also try parse from documentProps; accurate type defs
   const title =
@@ -27,7 +23,7 @@ export async function render(ctx: PageContextBuiltIn) {
     <title>${title}</title>
   </head>
   <body class="antialiased">
-    <div id="app">${dangerouslySkipEscape(appHtml)}</div>
+    <div id="app">${stream}</div>
   </body>
   </html>
   `

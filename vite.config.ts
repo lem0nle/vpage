@@ -12,6 +12,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 
 export default defineConfig({
+  base: process.env.BASE_URL || '/',
   resolve: {
     alias: {
       '@/': `${path.resolve(__dirname, 'src')}/`,
