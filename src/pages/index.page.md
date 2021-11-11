@@ -12,3 +12,5 @@ This is a **Markdown Template**. You can create _amazing_ things here.
 for i in range(3):
     print('Hello world!')
 ```
+
+Also see [Project Page](/demos/project) and [Personal Page](/demos/personal).

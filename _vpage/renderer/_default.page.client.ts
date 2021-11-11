@@ -1,14 +1,33 @@
+import { createSSRApp, h, shallowReactive } from 'vue'
+import {
+  useClientRouter,
+  PageContextBuiltInClient,
+} from 'vite-plugin-ssr/client/router'
 import '../browser/main.ts'
 
-import { createSSRApp, h } from 'vue'
-import { getPage } from 'vite-plugin-ssr/client'
+let pageContext: PageContextBuiltInClient
 
-hydrate()
-
-async function hydrate() {
-  const { Page } = await getPage()
-  const app = createSSRApp({
-    render: () => h(Page),
-  })
-  app.mount('#app')
-}
+useClientRouter({
+  render(ctx: PageContextBuiltInClient) {
+    if (!pageContext) {
+      // first time render, hydrate
+      pageContext = shallowReactive(ctx)
+      const app = createSSRApp({
+        setup() {
+          return () => h(pageContext.Page)
+        },
+      })
+      app.mount('#app')
+    } else {
+      Object.assign(pageContext, ctx)
+    }
+  },
+  ensureHydration: true,
+  prefetchLinks: true,
+  onTransitionStart: () => {
+    // ignore for now
+  },
+  onTransitionEnd: () => {
+    // ignore for now
+  },
+})
