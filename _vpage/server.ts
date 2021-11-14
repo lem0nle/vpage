@@ -20,12 +20,18 @@ async function startServer() {
     viteDevServer = await vite.createServer({
       root,
       server: { middlewareMode: 'ssr' },
+      base: process.env.BASE_URL,
     })
     app.use(viteDevServer.middlewares)
   }
 
   // render pages
-  const renderPage = createPageRenderer({ viteDevServer, isProduction, root })
+  const renderPage = createPageRenderer({
+    viteDevServer,
+    isProduction,
+    root,
+    base: process.env.BASE_URL,
+  })
 
   app.get('*', async (req, res, next) => {
     const url = req.originalUrl

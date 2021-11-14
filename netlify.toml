@@ -4,7 +4,7 @@
 
 [build]
   publish = "dist/client"
-  command = "npm i && npm run build"
+  command = "npm i --no-save && npm run build"
 
 [[redirects]]
   from = "/*"
