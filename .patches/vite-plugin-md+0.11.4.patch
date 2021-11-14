@@ -1,0 +1,25 @@
+diff --git a/node_modules/vite-plugin-md/dist/index.js b/node_modules/vite-plugin-md/dist/index.js
+index c402aa6..a32beda 100644
+--- a/node_modules/vite-plugin-md/dist/index.js
++++ b/node_modules/vite-plugin-md/dist/index.js
+@@ -119,10 +119,12 @@ function createMarkdown(options) {
+     html = hoistScripts.html;
+     const customBlocks = extractCustomBlock(html, options);
+     html = customBlocks.html;
++    let frontmatterExport;
+     const scriptLines = [];
+     if (options.frontmatter) {
+       const { head, frontmatter } = frontmatterPreprocess(data || {}, options);
+       scriptLines.push(`const frontmatter = ${JSON.stringify(frontmatter)}`);
++      frontmatterExport = `export const frontmatter = ${JSON.stringify(frontmatter)}`
+       if (!isVue2 && options.exposeFrontmatter && !defineExposeRE.test(hoistScripts.scripts.join("")))
+         scriptLines.push("defineExpose({ frontmatter })");
+       if (!isVue2 && headEnabled && head) {
+@@ -139,6 +141,7 @@ export default { data() { return { frontmatter } } }
+ ${scriptLines.join("\n")}
+ <\/script>`;
+     const sfc = `<template>${html}</template>
++<script>${frontmatterExport || ''}</script>
+ ${scripts}
+ ${customBlocks.blocks.join("\n")}
+ `;

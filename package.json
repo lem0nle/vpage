@@ -1,21 +1,22 @@
 {
   "private": true,
   "scripts": {
-    "dev": "vite --port 3333 --open",
-    "build": "vite-ssg build",
-    "preview": "vite preview --open",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,vue}\"",
-    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src",
+    "dev": "ts-node _vpage/server",
+    "build": "npm run build:clean && npm run build:vite && npm run build:prerender",
+    "pages": "serve dist/client/",
+    "serve": "cross-env NODE_ENV=production ts-node _vpage/server",
+    "build:clean": "rimraf dist/",
+    "build:vite": "vite build && vite build --ssr",
+    "build:prerender": "vite-plugin-ssr prerender",
+    "format": "prettier --write \"{src,examples,_vpage}/**/*.{ts,tsx,js,jsx,vue}\"",
+    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src examples _vpage",
     "tc": "vue-tsc --noEmit",
     "prepare": "husky install",
     "postinstall": "patch-package --patch-dir .patches"
   },
   "dependencies": {
-    "vue": "^3.2.21",
-    "vue-router": "^4.0.12"
-  },
-  "devDependencies": {
     "@iconify/json": "^1.1.424",
+    "@types/express": "^4.17.13",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/node": "^16.11.6",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
@@ -23,11 +24,12 @@
     "@vitejs/plugin-vue": "^1.9.4",
     "@vue/compiler-sfc": "^3.2.21",
     "@vue/server-renderer": "^3.2.21",
-    "@vueuse/head": "^0.5.1",
+    "cross-env": "^7.0.3",
     "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
+    "express": "^4.17.1",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
     "markdown-it-link-attributes": "^3.0.0",
@@ -35,20 +37,22 @@
     "patch-package": "^6.4.7",
     "prettier": "^2.4.1",
     "prism-theme-vars": "^0.2.2",
+    "rimraf": "^3.0.2",
+    "serve": "^13.0.2",
+    "ts-node": "^10.4.0",
     "typescript": "^4.4.4",
     "unplugin-icons": "^0.12.18",
-    "unplugin-vue-components": "^0.17.0",
+    "unplugin-vue-components": "^0.17.2",
     "vite": "^2.6.13",
     "vite-plugin-md": "^0.11.4",
-    "vite-plugin-pages": "^0.18.2",
-    "vite-plugin-vue-layouts": "^0.5.0",
+    "vite-plugin-ssr": "^0.3.26",
     "vite-plugin-windicss": "^1.5.1",
-    "vite-ssg": "^0.15.6",
+    "vue": "^3.2.21",
     "vue-tsc": "^0.28.10",
     "windicss": "^3.2.1"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,js,jsx,vue}": [
+    "{src,examples,_vpage}/**/*.{ts,tsx,js,jsx,vue}": [
       "eslint --fix --max-warnings=0"
     ]
   }

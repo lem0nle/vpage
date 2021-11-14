@@ -3,7 +3,7 @@
   NODE_VERSION = "14"
 
 [build]
-  publish = "dist"
+  publish = "dist/client"
   command = "npm i && npm run build"
 
 [[redirects]]

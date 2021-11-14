@@ -3,8 +3,9 @@ title: VPage | HOME
 meta:
   - name: description
     content: Markdown home page
+layout: home
 ---
 
-# Personal Home
+# Project Home
 
-<PersonalFooter />
+<ProjectFooter />

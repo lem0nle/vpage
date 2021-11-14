@@ -5,6 +5,6 @@ meta:
     content: Markdown home page
 ---
 
-# Project Home
+# Personal Home
 
-<ProjectFooter />
+<PersonalFooter />
