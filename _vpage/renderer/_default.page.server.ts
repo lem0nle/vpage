@@ -1,22 +1,25 @@
-import { createSSRApp, h } from 'vue'
-import { renderToString } from '@vue/server-renderer'
-import {
-  dangerouslySkipEscape,
-  escapeInject,
-  PageContextBuiltIn,
-} from 'vite-plugin-ssr'
+import { createSSRApp, h, defineAsyncComponent } from 'vue'
+import { renderToNodeStream } from '@vue/server-renderer'
+import { escapeInject, PageContextBuiltIn } from 'vite-plugin-ssr'
+import { resolveLayoutComponent } from './layout'
 
-export async function render(ctx: PageContextBuiltIn) {
+export async function render(ctx: PageContextBuiltIn & { _pageId: string }) {
   const { Page, pageExports } = ctx
 
-  const app = createSSRApp({
-    render: () => h(Page),
-  })
-  const appHtml = await renderToString(app)
+  const frontmatter = pageExports.frontmatter as Record<string, string>
+
+  const Layout = defineAsyncComponent(() =>
+    resolveLayoutComponent(frontmatter.layout, ctx._pageId),
+  )
+  const App = {
+    render: () =>
+      frontmatter.layout ? h(Layout, {}, { default: () => h(Page) }) : h(Page),
+  }
+  const app = createSSRApp(App)
+  const stream = renderToNodeStream(app)
 
   // TODO: also try parse from documentProps; accurate type defs
-  const title =
-    (pageExports.frontmatter as Record<string, string>)?.title || 'VPage'
+  const title = frontmatter.title || 'VPage'
 
   const documentHtml = escapeInject`<!DOCTYPE html>
   <html lang="en">
@@ -27,7 +30,7 @@ export async function render(ctx: PageContextBuiltIn) {
     <title>${title}</title>
   </head>
   <body class="antialiased">
-    <div id="app">${dangerouslySkipEscape(appHtml)}</div>
+    <div id="app">${stream}</div>
   </body>
   </html>
   `

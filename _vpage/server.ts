@@ -32,9 +32,10 @@ async function startServer() {
 
     const { httpResponse } = await renderPage({ url })
     if (!httpResponse) return next()
-    const { body, statusCode, contentType } = httpResponse
+    const { statusCode, contentType } = httpResponse
 
-    res.status(statusCode).type(contentType).send(body)
+    res.status(statusCode).type(contentType)
+    httpResponse.bodyNodeStream.pipe(res)
   })
 
   const port = process.env.PORT || 3000
