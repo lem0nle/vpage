@@ -7,13 +7,18 @@ import {
 } from 'vite-plugin-ssr'
 import { createApp } from './app'
 
-export async function render(ctx: PageContextBuiltIn & { _pageId: string }) {
+export async function render(
+  ctx: PageContextBuiltIn & {
+    _pageId: string
+    pageProps: Record<string, unknown>
+  },
+) {
   const { app, head } = await createApp(ctx)
 
   const stream = renderToNodeStream(app)
   const { headTags, htmlAttrs, bodyAttrs } = renderHeadToString(head)
 
-  const documentHtml = escapeInject`<!DOCTYPE html>
+  return escapeInject`<!DOCTYPE html>
   <html lang="en"${htmlAttrs}>
   <head>
     <meta charset="UTF-8">
@@ -26,9 +31,6 @@ export async function render(ctx: PageContextBuiltIn & { _pageId: string }) {
   </body>
   </html>
   `
-
-  return {
-    documentHtml,
-    pageContext: {},
-  }
 }
+
+export const passToClient = ['pageProps']

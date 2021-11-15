@@ -7,15 +7,26 @@ import '../browser/main.ts'
 import { createApp } from './app'
 import { resolveLayoutComponent } from './layout'
 
-let pageContext: PageContextBuiltInClient & { _pageId: string }
+let pageContext: PageContextBuiltInClient & {
+  _pageId: string
+  pageProps: Record<string, unknown>
+}
 let pageLayout: Ref<ComponentOptions | undefined>
 
 useClientRouter({
-  async render(ctx: PageContextBuiltInClient & { _pageId: string }) {
+  async render(
+    ctx: PageContextBuiltInClient & {
+      _pageId: string
+      pageProps: Record<string, unknown>
+    },
+  ) {
     if (!pageContext) {
       // first time render, hydrate
       const { app, context, layout } = await createApp(ctx)
-      pageContext = context as PageContextBuiltInClient & { _pageId: string }
+      pageContext = context as PageContextBuiltInClient & {
+        _pageId: string
+        pageProps: Record<string, unknown>
+      }
       pageLayout = layout
       app.mount('#app')
     } else {

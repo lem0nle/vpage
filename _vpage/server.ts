@@ -20,7 +20,7 @@ async function startServer() {
     viteDevServer = await vite.createServer({
       root,
       server: { middlewareMode: 'ssr' },
-      base: process.env.BASE_URL,
+      base: process.env.BASE_URL || '/',
     })
     app.use(viteDevServer.middlewares)
   }
@@ -30,7 +30,7 @@ async function startServer() {
     viteDevServer,
     isProduction,
     root,
-    base: process.env.BASE_URL,
+    base: process.env.BASE_URL || '/',
   })
 
   app.get('*', async (req, res, next) => {
