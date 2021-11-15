@@ -1,28 +1,29 @@
 import { PageContextBuiltIn } from 'vite-plugin-ssr'
-import { defineAsyncComponent, h, createSSRApp } from 'vue'
+import { defineAsyncComponent, h, computed, createSSRApp } from 'vue'
 import { createHead, useHead } from '@vueuse/head'
 import { resolveLayoutComponent } from './layout'
 
 export function createApp(
   ctx: Pick<PageContextBuiltIn, 'Page' | 'pageExports'> & { _pageId: string },
 ) {
-  const { Page, pageExports } = ctx
-  const frontmatter = pageExports.frontmatter as
-    | Record<string, string>
-    | undefined
+  const frontmatter = computed(
+    () =>
+      ({
+        title: 'VPage',
+        ...(ctx.pageExports.frontmatter as Record<string, string> | undefined),
+      } as Record<string, string>),
+  )
 
   const Layout = defineAsyncComponent(() =>
-    resolveLayoutComponent(frontmatter?.layout || '_default', ctx._pageId),
+    resolveLayoutComponent(frontmatter.value.layout, ctx._pageId),
   )
   const App = {
     setup() {
-      if (frontmatter) {
-        useHead(frontmatter)
-      }
+      useHead(frontmatter)
       return () =>
-        frontmatter?.layout
-          ? h(Layout, {}, { default: () => h(Page) })
-          : h(Page)
+        frontmatter.value?.layout
+          ? h(Layout, {}, { default: () => h(ctx.Page) })
+          : h(ctx.Page)
     },
   }
   const app = createSSRApp(App)
