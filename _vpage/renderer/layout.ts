@@ -1,4 +1,9 @@
-export function resolveLayoutComponent(name: string, pageId: string) {
+import { ComponentOptions } from 'vue'
+
+export async function resolveLayoutComponent(
+  name: string,
+  pageId: string,
+): Promise<ComponentOptions> {
   const dirs = pageId.split('/')
   dirs.splice(0, 1)
   dirs.splice(-2, 2)
@@ -6,23 +11,32 @@ export function resolveLayoutComponent(name: string, pageId: string) {
   // see https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
   switch (dirs.length) {
     case 0:
-      return import(`../../layouts/${name}.layout.vue`)
+      return (await import(`../../layouts/${name}.layout.vue`)).default
     case 1:
-      return import(`../../${dirs[0]}/layouts/${name}.layout.vue`)
+      return (await import(`../../${dirs[0]}/layouts/${name}.layout.vue`))
+        .default
     case 2:
-      return import(`../../${dirs[0]}/${dirs[1]}/layouts/${name}.layout.vue`)
+      return (
+        await import(`../../${dirs[0]}/${dirs[1]}/layouts/${name}.layout.vue`)
+      ).default
     case 3:
-      return import(
-        `../../${dirs[0]}/${dirs[1]}/${dirs[2]}/layouts/${name}.layout.vue`
-      )
+      return (
+        await import(
+          `../../${dirs[0]}/${dirs[1]}/${dirs[2]}/layouts/${name}.layout.vue`
+        )
+      ).default
     case 4:
-      return import(
-        `../../${dirs[0]}/${dirs[1]}/${dirs[2]}/${dirs[3]}/layouts/${name}.layout.vue`
-      )
+      return (
+        await import(
+          `../../${dirs[0]}/${dirs[1]}/${dirs[2]}/${dirs[3]}/layouts/${name}.layout.vue`
+        )
+      ).default
     case 5:
-      return import(
-        `../../${dirs[0]}/${dirs[1]}/${dirs[2]}/${dirs[3]}/${dirs[4]}/layouts/${name}.layout.vue`
-      )
+      return (
+        await import(
+          `../../${dirs[0]}/${dirs[1]}/${dirs[2]}/${dirs[3]}/${dirs[4]}/layouts/${name}.layout.vue`
+        )
+      ).default
     default:
       throw new Error('cannot assign layout to page with depth more than 5')
   }

@@ -8,7 +8,7 @@ import {
 import { createApp } from './app'
 
 export async function render(ctx: PageContextBuiltIn & { _pageId: string }) {
-  const { app, head } = createApp(ctx)
+  const { app, head } = await createApp(ctx)
 
   const stream = renderToNodeStream(app)
   const { headTags, htmlAttrs, bodyAttrs } = renderHeadToString(head)
