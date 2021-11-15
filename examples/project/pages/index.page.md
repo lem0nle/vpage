@@ -1,5 +1,5 @@
 ---
-title: VPage | HOME
+title: Project | HOME
 meta:
   - name: description
     content: Markdown home page
