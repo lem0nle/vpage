@@ -14,15 +14,18 @@ export function createApp(
       } as Record<string, string>),
   )
 
-  const Layout = defineAsyncComponent(() =>
-    resolveLayoutComponent(frontmatter.value.layout, ctx._pageId),
-  )
   const App = {
     setup() {
       useHead(frontmatter)
       return () =>
         frontmatter.value?.layout
-          ? h(Layout, {}, { default: () => h(ctx.Page) })
+          ? h(
+              defineAsyncComponent(() =>
+                resolveLayoutComponent(frontmatter.value.layout, ctx._pageId),
+              ),
+              {},
+              { default: () => h(ctx.Page) },
+            )
           : h(ctx.Page)
     },
   }
