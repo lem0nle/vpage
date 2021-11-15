@@ -1,8 +1,8 @@
 ---
-title: VPage | HOME
+title: Personal | HOME
 meta:
   - name: description
-    content: Markdown home page
+    content: Personal home page
 ---
 
 # Personal Home

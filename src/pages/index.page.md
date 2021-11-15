@@ -1,6 +1,5 @@
 ---
 title: VPage | HOME
-description: Markdown home page
 layout: home
 ---
 
