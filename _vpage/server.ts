@@ -8,11 +8,12 @@ startServer()
 
 async function startServer() {
   const app = express()
+  const base = process.env.BASE_URL || '/'
 
   // serve assets
   let viteDevServer
   if (isProduction) {
-    app.use(express.static(`${root}/dist/client`))
+    app.use(base, express.static(`${root}/dist/client`))
   } else {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const vite = require('vite')
@@ -20,7 +21,7 @@ async function startServer() {
     viteDevServer = await vite.createServer({
       root,
       server: { middlewareMode: 'ssr' },
-      base: process.env.BASE_URL || '/',
+      base,
     })
     app.use(viteDevServer.middlewares)
   }
@@ -30,7 +31,7 @@ async function startServer() {
     viteDevServer,
     isProduction,
     root,
-    base: process.env.BASE_URL || '/',
+    base,
   })
 
   app.get('*', async (req, res, next) => {
