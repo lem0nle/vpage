@@ -1,10 +1,12 @@
 # VPage
+[![Github Pages](https://img.shields.io/badge/pages-passing-brightgreen)](https://lem0nle.github.io/vpage)
+[![Netlify](https://img.shields.io/netlify/233f23d5-ac09-41e0-81ea-918eb6f5c744)](https://vpage.netlify.app)
 
 <img align="right" src="https://vitejs.dev/logo.svg" height="120px" alt="typescript logo">
 
-[VPage](https://github.com/lem0nle/vpage) is a _fast_, _modern_ and _flexible_ website starter built on Vite.
+> VPage is a _fast_, _modern_ and _flexible_ website starter built on Vite.
 
-It is designed for quickly building a website to place your personal homepage, display a project or promote a product, 
+VPage is designed for quickly building a website to place your personal homepage, display a project or promote a product, 
 but also very suitable to expand into more dynamic and complex front-end projects.
 
 ### Features
@@ -21,7 +23,7 @@ If you wish to deploy on Github Pages, simply use this template to create a repo
 To deploy on netlify, visit [Netlify](https://app.netlify.com/start) and select your cloned project. 
 
 ## Development
-Clone or create a local project with this template:
+To further add some customized needs and make it more dynamic, clone or create a local project with this template:
 
 ```bash
 npx degit lem0nle/vpage my-page
