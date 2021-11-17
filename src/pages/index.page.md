@@ -13,4 +13,4 @@ for i in range(3):
     print('Hello world!')
 ```
 
-Also see <Link href="/demos/project">Project Page</Link> and <Link href="/demos/personal">Personal Page</Link>.
+Also see <a-router href="/demos/project">Project Page</a-router> and <a-router href="/demos/personal">Personal Page</a-router>.
