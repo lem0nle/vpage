@@ -1,5 +1,5 @@
 # VPage
-[![Github Pages](https://img.shields.io/badge/pages-passing-brightgreen)](https://lem0nle.github.io/vpage)
+[![Github Pages](https://github.com/lem0nle/vpage/actions/workflows/gh-pages.yml/badge.svg?branch=main)](https://lem0nle.github.io/vpage)
 [![Netlify](https://img.shields.io/netlify/233f23d5-ac09-41e0-81ea-918eb6f5c744)](https://vpage.netlify.app)
 
 <img align="right" src="https://vitejs.dev/logo.svg" height="120px" alt="typescript logo">
