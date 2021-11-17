@@ -46,7 +46,8 @@ export async function createApp(
   const head = createHead()
   app.use(head)
 
-  app.component('Link', RouterLink)
+  // eslint-disable-next-line vue/component-definition-name-casing
+  app.component('a-router', RouterLink)
 
   return { app, head, context, frontmatter, layout }
 }

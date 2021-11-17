@@ -14,7 +14,8 @@
     "strictNullChecks": true,
     "types": ["vite/client"],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "vpage/*": ["_vpage/lib/*"]
     }
   },
   "ts-node": {

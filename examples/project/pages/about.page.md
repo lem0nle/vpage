@@ -6,8 +6,8 @@ meta:
 layout: home
 ---
 
-# Project Home
+# About
 
-<a-router href="/demos/project/about">More...</a-router>
+About this project
 
 <ProjectFooter />

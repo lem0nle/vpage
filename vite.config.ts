@@ -15,7 +15,8 @@ export default defineConfig({
   base: process.env.BASE_URL || '/',
   resolve: {
     alias: {
-      '@/': `${path.resolve(__dirname, 'src')}/`,
+      '@': `${path.resolve(__dirname, 'src')}/`,
+      vpage: `${path.resolve(__dirname, '_vpage/lib')}/`,
     },
   },
   plugins: [
