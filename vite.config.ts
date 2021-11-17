@@ -49,6 +49,8 @@ export default defineConfig({
         'examples/**/components',
       ],
     }),
-    Icons(),
+    Icons({
+      autoInstall: true,
+    }),
   ],
 })
