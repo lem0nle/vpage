@@ -26,7 +26,7 @@ export async function render(
     <meta name="theme-color" content="#ffffff">
     ${dangerouslySkipEscape(headTags)}
   </head>
-  <body class="antialiased"${bodyAttrs}>
+  <body class="antialiased text-gray-700"${bodyAttrs}>
     <div id="app">${stream}</div>
   </body>
   </html>

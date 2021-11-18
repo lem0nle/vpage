@@ -1,2 +1,9 @@
 import { useRouter } from 'vpage/router'
-useRouter()
+useRouter({
+  onTransitionStart() {
+    console.log('start transition')
+  },
+  onTransitionEnd() {
+    console.log('end transition')
+  },
+})

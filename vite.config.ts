@@ -25,6 +25,7 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/],
     }),
     Markdown({
+      wrapperClasses: 'prose prose-lg prose-blue',
       markdownItSetup(md) {
         // https://prismjs.com/
         md.use(Prism)
