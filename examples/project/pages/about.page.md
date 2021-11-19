@@ -1,8 +1,5 @@
 ---
-title: Project | HOME
-meta:
-  - name: description
-    content: Markdown home page
+title: Project | About
 layout: home
 ---
 
