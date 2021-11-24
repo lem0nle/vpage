@@ -1,18 +1,10 @@
 import { renderToNodeStream } from '@vue/server-renderer'
 import { renderHeadToString } from '@vueuse/head'
-import {
-  dangerouslySkipEscape,
-  escapeInject,
-  PageContextBuiltIn,
-} from 'vite-plugin-ssr'
+import { dangerouslySkipEscape, escapeInject } from 'vite-plugin-ssr'
+import { PageContext } from '../lib/context'
 import { createApp } from './app'
 
-export async function render(
-  ctx: PageContextBuiltIn & {
-    _pageId: string
-    pageProps: Record<string, unknown>
-  },
-) {
+export async function render(ctx: PageContext) {
   const { app, head } = await createApp(ctx)
 
   const stream = renderToNodeStream(app)
@@ -33,4 +25,4 @@ export async function render(
   `
 }
 
-export const passToClient = ['pageProps']
+export const passToClient = ['pageProps', 'url', 'urlParsed']

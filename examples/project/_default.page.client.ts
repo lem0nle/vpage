@@ -1,5 +1,5 @@
-import { useRouter } from 'vpage/router'
-useRouter({
+import { setupClientRouter } from 'vpage/router'
+setupClientRouter({
   onTransitionStart() {
     console.log('start transition')
   },

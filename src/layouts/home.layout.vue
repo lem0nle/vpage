@@ -19,7 +19,12 @@
   <main class="px-4 py-16 max-w-3xl mx-auto">
     <slot />
     <div class="mt-24 mx-auto text-center opacity-25 text-sm">
-      [Home Layout]
+      [ {{ pathname }} ]
     </div>
   </main>
 </template>
+
+<script setup lang="ts">
+import { useCurrentUrl } from 'vpage/router'
+const { pathname } = useCurrentUrl()
+</script>

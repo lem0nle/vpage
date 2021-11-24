@@ -1,15 +1,10 @@
-import { PageContextBuiltIn } from 'vite-plugin-ssr'
 import { h, shallowReactive, shallowRef, computed, createSSRApp } from 'vue'
 import { createHead, useHead } from '@vueuse/head'
 import { resolveLayoutComponent } from './layout'
 import RouterLink from './RouterLink.vue'
+import { PageContext, providePageContext } from '../lib/context'
 
-export async function createApp(
-  ctx: Pick<PageContextBuiltIn, 'Page' | 'pageExports'> & {
-    _pageId: string
-    pageProps: Record<string, unknown>
-  },
-) {
+export async function createApp(ctx: PageContext) {
   const context = shallowReactive(ctx)
   const frontmatter = computed(
     () =>
@@ -28,6 +23,7 @@ export async function createApp(
 
   const App = {
     setup() {
+      providePageContext(context)
       useHead(frontmatter)
       return () =>
         layout.value

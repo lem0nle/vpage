@@ -1,39 +1,26 @@
-import { Ref, ComponentOptions } from 'vue'
-import {
-  useClientRouter,
-  PageContextBuiltInClient,
-} from 'vite-plugin-ssr/client/router'
+import { Ref, ComponentOptions, computed } from 'vue'
+import { useClientRouter } from 'vite-plugin-ssr/client/router'
 import '../browser/main.ts'
 import { createApp } from '../renderer/app'
 import { resolveLayoutComponent } from '../renderer/layout'
+import { PageContext, usePageContext } from './context'
 
-let pageContext: PageContextBuiltInClient & {
-  _pageId: string
-  pageProps: Record<string, unknown>
-}
+let pageContext: PageContext
 let pageLayout: Ref<ComponentOptions | undefined>
 
-interface UseRouterConfig {
+interface SetupClientRouterConfig {
   onTransitionStart?: () => void
   onTransitionEnd?: () => void
   prefetchLinks?: boolean
 }
 
-export function useRouter(config?: UseRouterConfig) {
+export function setupClientRouter(config?: SetupClientRouterConfig) {
   useClientRouter({
-    async render(
-      ctx: PageContextBuiltInClient & {
-        _pageId: string
-        pageProps: Record<string, unknown>
-      },
-    ) {
+    async render(ctx: PageContext) {
       if (!pageContext) {
         // first time render, hydrate
         const { app, context, layout } = await createApp(ctx)
-        pageContext = context as PageContextBuiltInClient & {
-          _pageId: string
-          pageProps: Record<string, unknown>
-        }
+        pageContext = context
         pageLayout = layout
         app.mount('#app')
       } else {
@@ -50,4 +37,15 @@ export function useRouter(config?: UseRouterConfig) {
     prefetchLinks: true,
     ...config,
   })
+}
+
+export function useCurrentUrl() {
+  const ctx = usePageContext()
+  return {
+    url: computed(() => ctx.url),
+    origin: computed(() => ctx.urlParsed.origin),
+    pathname: computed(() => ctx.urlParsed.pathname),
+    hash: computed(() => ctx.urlParsed.hash),
+    search: computed(() => ctx.urlParsed.search),
+  }
 }
