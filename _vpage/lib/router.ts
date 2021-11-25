@@ -46,7 +46,8 @@ export function useCurrentUrl() {
     origin: computed(() => ctx.urlParsedServer?.origin || ctx.urlParsed.origin),
     pathname: computed(() => {
       const pathname = ctx.urlParsedServer?.pathname || ctx.urlParsed.pathname
-      if (pathname.endsWith('/')) return pathname.slice(0, pathname.length - 1)
+      if (pathname !== '/' && pathname.endsWith('/'))
+        return pathname.slice(0, pathname.length - 1)
       return pathname
     }),
     search: computed(() => ctx.urlParsedServer?.search || ctx.urlParsed.search),
