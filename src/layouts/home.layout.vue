@@ -5,7 +5,7 @@
       ><span class="underline underline-gray-200">Page</span>
     </a-router>
     <div class="text-xl space-x-12">
-      <a-router href="/demos/project">Demo</a-router>
+      <a-router href="/demos">Demo</a-router>
       <a-router href="/about">About</a-router>
       <a
         href="https://github.com/lem0nle/vpage/"
