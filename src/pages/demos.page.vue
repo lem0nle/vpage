@@ -1,0 +1,13 @@
+<template>
+  <div class="prose prose-blue">
+    <h1>Demos</h1>
+    <ul>
+      <li><a-router href="/demos/personal">Personal demo</a-router></li>
+      <li><a-router href="/demos/project">Project demo</a-router></li>
+    </ul>
+  </div>
+</template>
+
+<script lang="ts">
+export { default as Layout } from '../layouts/home.layout.vue'
+</script>

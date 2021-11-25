@@ -1,4 +1,11 @@
-import { h, shallowReactive, shallowRef, computed, createSSRApp } from 'vue'
+import {
+  h,
+  shallowReactive,
+  shallowRef,
+  computed,
+  createSSRApp,
+  ComponentOptions,
+} from 'vue'
 import { createHead, useHead } from '@vueuse/head'
 import { resolveLayoutComponent } from './layout'
 import RouterLink from './RouterLink.vue'
@@ -18,7 +25,7 @@ export async function createApp(ctx: PageContext) {
   const layout = shallowRef(
     frontmatter.value.layout
       ? await resolveLayoutComponent(frontmatter.value.layout, context._pageId)
-      : undefined,
+      : (context.pageExports.Layout as ComponentOptions | undefined),
   )
 
   const App = {
