@@ -30,6 +30,7 @@ export function setupClientRouter(config?: SetupClientRouterConfig) {
         pageLayout.value = frontmatter?.layout
           ? await resolveLayoutComponent(frontmatter.layout, ctx._pageId)
           : undefined
+        pageContext.urlParsedServer = undefined
         Object.assign(pageContext, ctx)
       }
     },
@@ -42,10 +43,13 @@ export function setupClientRouter(config?: SetupClientRouterConfig) {
 export function useCurrentUrl() {
   const ctx = usePageContext()
   return {
-    url: computed(() => ctx.url),
-    origin: computed(() => ctx.urlParsed.origin),
-    pathname: computed(() => ctx.urlParsed.pathname),
+    origin: computed(() => ctx.urlParsedServer?.origin || ctx.urlParsed.origin),
+    pathname: computed(() => {
+      const pathname = ctx.urlParsedServer?.pathname || ctx.urlParsed.pathname
+      if (pathname.endsWith('/')) return pathname.slice(0, pathname.length - 1)
+      return pathname
+    }),
+    search: computed(() => ctx.urlParsedServer?.search || ctx.urlParsed.search),
     hash: computed(() => ctx.urlParsed.hash),
-    search: computed(() => ctx.urlParsed.search),
   }
 }

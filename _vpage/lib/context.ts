@@ -2,16 +2,17 @@ import { PageContextBuiltIn } from 'vite-plugin-ssr'
 import { provide, inject, InjectionKey, readonly } from 'vue'
 import { assert } from './utils'
 
+interface UrlParsed {
+  origin: string
+  pathname: string
+  search: string | null
+  hash: string | null
+}
 export type PageContext = Pick<PageContextBuiltIn, 'Page' | 'pageExports'> & {
   _pageId: string
   pageProps: Record<string, unknown>
-  url: string
-  urlParsed: {
-    origin: string
-    pathname: string
-    search: string | null
-    hash: string | null
-  }
+  urlParsedServer?: UrlParsed
+  urlParsed: UrlParsed
 }
 
 const pageContextSymbol: InjectionKey<Readonly<PageContext>> = Symbol()
