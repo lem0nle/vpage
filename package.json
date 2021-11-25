@@ -9,7 +9,6 @@
     "build:prerender": "vite-plugin-ssr prerender",
     "format": "prettier --write \"{src,examples,_vpage}/**/*.{ts,tsx,js,jsx,vue}\"",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src examples _vpage",
-    "tc": "vue-tsc --noEmit",
     "prepare": "husky install",
     "postinstall": "patch-package --patch-dir .patches"
   },
@@ -21,7 +20,6 @@
   "devDependencies": {
     "@iconify-json/mi": "^1.0.1",
     "@types/express": "^4.17.13",
-    "@types/jsdom": "^16.2.13",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/node": "^16.11.6",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
@@ -36,7 +34,7 @@
     "eslint-plugin-vue": "^8.0.3",
     "express": "^4.17.1",
     "husky": "^7.0.4",
-    "jsdom": "^18.1.1",
+    "linkedom": "^0.13.0",
     "lint-staged": "^12.0.3",
     "markdown-it-link-attributes": "^3.0.0",
     "markdown-it-prism": "^2.2.1",
@@ -51,8 +49,7 @@
     "vite": "^2.6.13",
     "vite-plugin-md": "^0.11.4",
     "vite-plugin-ssr": "^0.3.31",
-    "vite-plugin-windicss": "^1.5.1",
-    "vue-tsc": "^0.29.5"
+    "vite-plugin-windicss": "^1.5.1"
   },
   "lint-staged": {
     "{src,examples,_vpage}/**/*.{ts,tsx,js,jsx,vue}": [
