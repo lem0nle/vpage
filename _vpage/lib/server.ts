@@ -5,24 +5,27 @@ import { PageContext } from './context'
 import { createApp } from '../renderer/app'
 
 export function setupServerRenderer(html: string) {
-  const { document } = parseHTML(html)
-
   async function render(ctx: PageContext) {
     const { app, head } = await createApp(ctx)
 
-    const stream = renderToNodeStream(app)
+    const { document } = parseHTML(html)
     head.updateDOM(document)
-    const html = document.toString()
+    const htmlWithHead = document.toString()
 
-    const stringArray = html.split('<!-- vpage-content -->')
+    const stream = renderToNodeStream(app)
+
+    const stringArray = htmlWithHead.split('<!-- vpage-content -->')
     Object.assign(stringArray, { raw: stringArray })
-    return escapeInject(stringArray as unknown as TemplateStringsArray, stream)
+    return {
+      documentHtml: escapeInject(
+        stringArray as unknown as TemplateStringsArray,
+        stream,
+      ),
+      pageContext: {
+        urlParsedServer: ctx.urlParsed,
+      },
+    }
   }
 
-  const passToClient = ['pageProps', 'url', 'urlParsed']
-
-  return {
-    render,
-    passToClient,
-  }
+  return { render, passToClient: ['pageProps', 'urlParsedServer'] }
 }
