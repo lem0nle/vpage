@@ -9,13 +9,11 @@
     "build:prerender": "vite-plugin-ssr prerender",
     "format": "prettier --write \"{src,examples,_vpage}/**/*.{ts,tsx,js,jsx,vue}\"",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src examples _vpage",
-    "tc": "vue-tsc --noEmit",
     "prepare": "husky install",
     "postinstall": "patch-package --patch-dir .patches"
   },
   "dependencies": {
     "@vueuse/head": "^0.7.2",
-    "linkedom": "^0.13.0",
     "vue": "^3.2.21",
     "windicss": "^3.2.1"
   },
@@ -36,6 +34,7 @@
     "eslint-plugin-vue": "^8.0.3",
     "express": "^4.17.1",
     "husky": "^7.0.4",
+    "linkedom": "^0.13.0",
     "lint-staged": "^12.0.3",
     "markdown-it-link-attributes": "^3.0.0",
     "markdown-it-prism": "^2.2.1",
@@ -50,8 +49,7 @@
     "vite": "^2.6.13",
     "vite-plugin-md": "^0.11.4",
     "vite-plugin-ssr": "^0.3.31",
-    "vite-plugin-windicss": "^1.5.1",
-    "vue-tsc": "^0.29.5"
+    "vite-plugin-windicss": "^1.5.1"
   },
   "lint-staged": {
     "{src,examples,_vpage}/**/*.{ts,tsx,js,jsx,vue}": [
