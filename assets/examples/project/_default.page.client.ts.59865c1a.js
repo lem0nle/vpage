@@ -1,0 +1,1 @@
+import{s as o}from"../../router.7ac6db98.js";import"../../vendor.0fdfec56.js";import"../../app.ff784157.js";o({onTransitionStart(){console.log("start transition")},onTransitionEnd(){console.log("end transition")}});
