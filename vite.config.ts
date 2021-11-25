@@ -6,13 +6,16 @@ import Vue from '@vitejs/plugin-vue'
 import Markdown from 'vite-plugin-md'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
+import ReplaceLink from 'markdown-it-replace-link'
 import WindiCSS from 'vite-plugin-windicss'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 
+const base = process.env.BASE_URL || '/'
+
 export default defineConfig({
-  base: process.env.BASE_URL || '/',
+  base,
   resolve: {
     alias: {
       '@': `${path.resolve(__dirname, 'src')}/`,
@@ -26,6 +29,14 @@ export default defineConfig({
     }),
     Markdown({
       wrapperClasses: 'prose prose-lg prose-blue',
+      markdownItOptions: {
+        replaceLink(link: string) {
+          if (link.startsWith('/')) {
+            return base + link.slice(1)
+          }
+          return link
+        },
+      } as never,
       markdownItSetup(md) {
         // https://prismjs.com/
         md.use(Prism)
@@ -36,6 +47,7 @@ export default defineConfig({
             rel: 'noopener',
           },
         })
+        md.use(ReplaceLink)
       },
     }),
     WindiCSS(),
