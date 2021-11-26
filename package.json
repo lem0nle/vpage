@@ -1,10 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "dev": "ts-node _vpage/server",
+    "dev": "node _vpage/server",
     "build": "npm run build:vite && npm run build:prerender",
     "pages": "serve dist/client/",
-    "serve": "cross-env NODE_ENV=production ts-node _vpage/server",
+    "serve": "cross-env NODE_ENV=production node _vpage/server",
     "build:vite": "vite build && vite build --ssr",
     "build:prerender": "vite-plugin-ssr prerender",
     "format": "prettier --write \"{src,examples,_vpage}/**/*.{ts,tsx,js,jsx,vue}\"",
@@ -43,7 +43,6 @@
     "prettier": "^2.4.1",
     "prism-theme-vars": "^0.2.2",
     "serve": "^13.0.2",
-    "ts-node": "^10.4.0",
     "typescript": "^4.4.4",
     "unplugin-icons": "^0.12.18",
     "unplugin-vue-components": "^0.17.2",
