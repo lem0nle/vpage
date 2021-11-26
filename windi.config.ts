@@ -2,7 +2,6 @@ import { defineConfig } from 'vite-plugin-windicss'
 import typography from 'windicss/plugin/typography'
 
 export default defineConfig({
-  safelist: 'prose prose-lg prose-blue',
   extract: {
     include: ['_vpage/**', 'examples/**', 'src/**', 'index.html'],
   },

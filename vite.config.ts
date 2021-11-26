@@ -28,7 +28,6 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/],
     }),
     Markdown({
-      wrapperClasses: 'prose prose-lg prose-blue',
       markdownItOptions: {
         replaceLink(link: string) {
           if (link.startsWith('/')) {
