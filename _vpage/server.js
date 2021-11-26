@@ -1,5 +1,6 @@
-import express from 'express'
-import { createPageRenderer } from 'vite-plugin-ssr'
+/* eslint-disable @typescript-eslint/no-var-requires */
+const express = require('express')
+const { createPageRenderer } = require('vite-plugin-ssr')
 
 const isProduction = process.env.NODE_ENV === 'production'
 const root = `${__dirname}/..`
