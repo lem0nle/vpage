@@ -1,1 +1,0 @@
-import{_ as e}from"./plugin-vue_export-helper.21dcd24c.js";import{o,c as r}from"./vendor.b0212000.js";const t={},c={class:"text-gray-300"};function s(n,_){return o(),r("div",c,"Project Footer")}var d=e(t,[["render",s]]);export{d as P};
