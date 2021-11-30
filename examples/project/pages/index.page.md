@@ -2,7 +2,7 @@
 title: Project | HOME
 meta:
   - name: description
-    content: Markdown home page
+    content: Project home page
 layout: home
 ---
 
