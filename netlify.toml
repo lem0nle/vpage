@@ -5,8 +5,3 @@
 [build]
   publish = "dist/client"
   command = "npm i --no-save && npm run build"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
