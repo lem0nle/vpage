@@ -13,19 +13,22 @@
       <div class="flex space-x-10">
         <a-router
           class="font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
-          href="/demos/project/download"
-          >Download</a-router
+          href="/demos/project/blog"
         >
+          Blog
+        </a-router>
         <a-router
           class="font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
-          href="/demos/project/company"
-          >Company</a-router
+          href="/demos/project/team"
         >
+          Team
+        </a-router>
         <a-router
           class="font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
           href="/demos/project/help"
-          >Help</a-router
         >
+          Help
+        </a-router>
       </div>
     </div>
   </div>

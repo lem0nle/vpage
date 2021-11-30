@@ -1,11 +1,9 @@
 ---
-title: Project | HOME
-meta:
-  - name: description
-    content: Project home page
-layout: home
+title: VPage | Docs
+layout: doc
 ---
 
+# Documentation
 Deno is a simple, modern and secure runtime for JavaScript and TypeScript that uses V8 and is built in Rust.
 
 * Secure by default. No file, network, or environment access, unless explicitly enabled.
@@ -56,3 +54,15 @@ The basic runtime documentation for Deno can be found on doc.deno.land.
 Deno comes with a manual which contains more in depth explanations about the more complex functions of the runtime, an introduction to the concepts that Deno is built on, details about the internals of Deno, how to embed Deno in your own application and how to extend Deno using Rust plugins.
 
 The manual also contains information about the built in tools that Deno provides.
+
+## Standard Modules
+Next to the Deno runtime, Deno also provides a list of audited standard modules that are reviewed by the Deno maintainers and are guaranteed to work with a specific Deno version. These live in the denoland/deno_std repository.
+
+These standard modules are hosted at deno.land/std and are distributed via URLs like all other ES modules that are compatible with Deno.
+
+## Third Party Modules
+Deno can import modules from any location on the web, like GitHub, a personal webserver, or a CDN like Skypack, jspm.io, jsDelivr or esm.sh.
+
+To make it easier to consume third party modules Deno provides some built in tooling like deno info and deno doc. deno.land also provides a web UI for viewing module documentation. It is available at doc.deno.land.
+
+deno.land also provides a simple public hosting service for ES modules that work with Deno. It can be found at deno.land/x.

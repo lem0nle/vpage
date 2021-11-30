@@ -6,6 +6,7 @@
     </a-router>
     <div class="text-xl space-x-12">
       <a-router href="/demos">Demo</a-router>
+      <a-router href="/docs">Docs</a-router>
       <a-router href="/about">About</a-router>
       <a
         href="https://github.com/lem0nle/vpage/"
