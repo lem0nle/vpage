@@ -16,7 +16,7 @@
       </a>
     </div>
   </nav>
-  <main class="px-4 py-16 max-w-3xl mx-auto">
+  <main class="px-4 py-16 prose max-w-3xl mx-auto">
     <slot />
     <div class="mt-24 mx-auto text-center opacity-25 text-sm">
       [ {{ pathname }} ]
