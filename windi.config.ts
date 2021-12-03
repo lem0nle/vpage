@@ -4,7 +4,7 @@ import typography from 'windicss/plugin/typography'
 
 export default defineConfig({
   preflight: {
-    safelist: 'h1 h2 h3 p ul ol li img hr code pre',
+    safelist: 'h1 h2 h3 p ul ol li img hr blockquote code pre',
   },
   extract: {
     include: [
@@ -29,6 +29,12 @@ export default defineConfig({
               content: '""',
             },
             'code::after': {
+              content: '""',
+            },
+            'blockquote p:first-of-type::before': {
+              content: '""',
+            },
+            'blockquote p:last-of-type::after': {
               content: '""',
             },
           },
