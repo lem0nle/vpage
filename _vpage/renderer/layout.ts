@@ -4,9 +4,8 @@ export async function resolveLayoutComponent(
   name: string,
   pageId: string,
 ): Promise<ComponentOptions> {
-  const dirs = pageId.split('/')
-  dirs.splice(0, 1)
-  dirs.splice(-2, 2)
+  let dirs = pageId.split('/')
+  dirs = dirs.slice(1, dirs.lastIndexOf('pages'))
   // we have to statically find layout dirs due to dynamic import limitations of rollup
   // see https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
   switch (dirs.length) {
