@@ -7,8 +7,8 @@
     "serve": "cross-env NODE_ENV=production node _vpage/server",
     "build:vite": "vite build && vite build --ssr",
     "build:prerender": "vite-plugin-ssr prerender",
-    "format": "prettier --write \"{src,examples,_vpage}/**/*.{ts,tsx,js,jsx,vue}\"",
-    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src examples _vpage",
+    "format": "prettier --write \"{docs,src,examples,_vpage}/**/*.{ts,tsx,js,jsx,vue}\"",
+    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue docs src examples _vpage",
     "prepare": "husky install",
     "postinstall": "patch-package --patch-dir .patches"
   },
