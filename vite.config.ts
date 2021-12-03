@@ -7,6 +7,7 @@ import Markdown from 'vite-plugin-md'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
 import ReplaceLink from 'markdown-it-replace-link'
+import Anchor from 'markdown-it-anchor'
 import WindiCSS from 'vite-plugin-windicss'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
@@ -47,6 +48,7 @@ export default defineConfig({
           },
         })
         md.use(ReplaceLink)
+        md.use(Anchor)
       },
     }),
     WindiCSS(),
