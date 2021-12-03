@@ -15,7 +15,7 @@ Read the [installation guide](/docs/installation) for more details.
 ## Start from an example
 VPage lets you start a website extremely easily. We have hand-crafted several example sites as a starting point for you, and all you need to do is to copy-and-paste the one that fits your need, and build your own website upon it.
 
-For demonstration, let's copy `asssets/`, `components/`, `layouts/` and `pages/` directories from `examples/personal/` to `src/` (overwrite the original directories). Your directory structure would then be like:
+For demonstration, let's copy `assets/`, `components/`, `layouts/` and `pages/` directories from `examples/personal/` to `src/` (overwrite the original directories). Your directory structure would then be like:
 ```yaml
 src/
   assets/
