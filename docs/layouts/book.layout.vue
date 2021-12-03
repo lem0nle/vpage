@@ -3,8 +3,10 @@
     class="absolute inset-0 grid grid-cols-[auto,1fr] grid-rows-[auto,1fr]"
   >
     <aside
-      v-if="asideVisible"
       class="w-64 row-span-2 overflow-scroll bg-gray-50 p-6"
+      :class="{
+        'w-0 px-0': !asideVisible,
+      }"
     >
       <a-router
         href="/"
