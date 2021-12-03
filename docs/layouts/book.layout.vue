@@ -16,9 +16,9 @@
       <nav class="mt-6">
         <ul class="space-y-4">
           <li>
-            <a-router href="/docs/installation" class="font-semibold">
+            <NavLink class="font-semibold" href="/docs/installation">
               Installation
-            </a-router>
+            </NavLink>
             <ul class="ml-4 mt-2 space-y-1">
               <li>
                 <a-router href="/docs/installation#requirements">
@@ -36,26 +36,75 @@
             </ul>
           </li>
           <li>
-            <a-router href="/docs" class="font-semibold">
+            <NavLink class="font-semibold" href="/docs">
               Getting Started
-            </a-router>
+            </NavLink>
             <ul class="ml-4 mt-2 space-y-1">
-              <li>Start from an example</li>
-              <li>Write a new page</li>
-              <li>Customize design</li>
-              <li>Build and deploy website</li>
+              <li>
+                <a-router href="/docs#start-from-an-example">
+                  Start from an example
+                </a-router>
+              </li>
+              <li>
+                <a-router href="/docs#write-a-new-page">
+                  Write a new page
+                </a-router>
+              </li>
+              <li>
+                <a-router href="/docs#customize-design">
+                  Customize design
+                </a-router>
+              </li>
+              <li>
+                <a-router href="/docs#build-and-deploy-website">
+                  Build and deploy website
+                </a-router>
+              </li>
             </ul>
           </li>
           <li>
-            <a-router href="/docs/advanced" class="font-semibold">
-              Advanced
-            </a-router>
+            <div class="font-semibold">Advanced</div>
             <ul class="ml-4 mt-2 space-y-1">
-              <li>Architecture</li>
-              <li>Router</li>
-              <li>Organize a large website</li>
-              <li>SEO</li>
-              <li>Data fetching</li>
+              <li>
+                <NavLink
+                  href="/docs/advanced/architecture"
+                  active-class="text-blue-700 font-medium"
+                >
+                  Architecture
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  href="/docs/advanced/router"
+                  active-class="text-blue-700 font-medium"
+                >
+                  Router
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  href="/docs/advanced/organize"
+                  active-class="text-blue-700 font-medium"
+                >
+                  Organize a large website
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  href="/docs/advanced/seo"
+                  active-class="text-blue-700 font-medium"
+                >
+                  SEO
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  href="/docs/advanced/data"
+                  active-class="text-blue-700 font-medium"
+                >
+                  Data fetching
+                </NavLink>
+              </li>
             </ul>
           </li>
         </ul>
@@ -64,7 +113,7 @@
 
     <header class="col-start-2 px-6 py-4 flex items-center justify-between">
       <button
-        class="text-2xl font-medium text-gray-400 px-3 py-1 rounded hover:bg-gray-100"
+        class="text-2xl font-medium text-gray-400 px-3 py-1 rounded hover:bg-gray-100 focus:outline-none"
         @click="toggleAside"
       >
         ≡
@@ -97,6 +146,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import NavLink from '../components/NavLink.vue'
 
 const asideVisible = ref(true)
 const toggleAside = () => (asideVisible.value = !asideVisible.value)
