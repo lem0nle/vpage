@@ -1,0 +1,1 @@
+import{P as r,a as t}from"./ProjectFooter.227e1070.js";import{d as a,o as s,c,q as e,l as n,r as m,F as p}from"./vendor.2fe9af50.js";import"./plugin-vue_export-helper.21dcd24c.js";const l={class:"mt-16 mx-auto px-4 prose text-gray-800 max-w-screen-sm"},j=a({setup(d){return(o,u)=>(s(),c(p,null,[e(r),n("main",l,[m(o.$slots,"default")]),e(t)],64))}});export{j as default};

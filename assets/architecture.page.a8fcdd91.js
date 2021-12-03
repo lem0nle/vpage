@@ -1,0 +1,1 @@
+import{o as e,c as o,l as c}from"./vendor.2fe9af50.js";const r={class:"markdown-body"},a=c("h1",{id:"architecture",tabindex:"-1"},"Architecture",-1),s=[a],u={title:"Architecture - VPage Docs",layout:"book"},h={setup(n,{expose:t}){return t({frontmatter:{title:"Architecture - VPage Docs",layout:"book"}}),(_,d)=>(e(),o("div",r,s))}};export{h as default,u as frontmatter};
