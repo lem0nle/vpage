@@ -22,7 +22,7 @@ export default defineConfig({
           css: {
             code: {
               fontWeight: '600',
-              color: colors.cyan[700],
+              color: colors.blue[800],
               padding: '0 0.125rem',
             },
             'code::before': {
