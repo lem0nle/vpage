@@ -56,8 +56,8 @@
                 </a-router>
               </li>
               <li>
-                <a-router href="/docs#build-and-deploy-website">
-                  Build and deploy website
+                <a-router href="/docs#publish-website">
+                  Publish website
                 </a-router>
               </li>
             </ul>
@@ -136,10 +136,14 @@
         </svg>
       </a>
     </header>
+
     <main class="col-start-2 overflow-scroll">
       <article class="prose mx-auto p-6">
         <slot></slot>
       </article>
+      <footer class="h-16">
+        <!-- TODO: prev/next links -->
+      </footer>
     </main>
   </article>
 </template>

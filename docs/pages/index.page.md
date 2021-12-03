@@ -3,66 +3,96 @@ title: Getting Started - VPage Docs
 layout: book
 ---
 
-# Documentation
-Deno is a simple, modern and secure runtime for JavaScript and TypeScript that uses V8 and is built in Rust.
+# Getting Started
 
-* Secure by default. No file, network, or environment access, unless explicitly enabled.
-* Supports TypeScript out of the box.
-* Ships only a single executable file.
-* Has built-in utilities like a dependency inspector (deno info) and a code formatter (deno fmt).
-* Has a set of reviewed (audited) standard modules that are guaranteed to work with Deno: deno.land/std
-* Has a number of companies interested in using and exploring Deno
-
-## Installation
-Deno ships as a single executable with no dependencies. You can install it using the installers below, or download a release binary from the releases page.
-
-Shell (Mac, Linux):
+Before you start, run the following command to start a development server:
 ```bash
-$ curl -fsSL https://deno.land/x/install/install.sh | sh
+npm run dev
 ```
 
-PowerShell (Windows):
+Read the [installation guide](/docs/installation) for more details.
+
+## Start from an example
+VPage lets you start a website extremely easily. We have hand-crafted several example sites as a starting point for you, and all you need to do is to copy-and-paste the one that fits your need, and build your own website upon it.
+
+For demonstration, let's copy `asssets/`, `components/`, `layouts/` and `pages/` directories from `examples/personal/` to `src/` (overwrite the original directories). Your directory structure would then be like:
+```yaml
+src/
+  assets/
+    ...
+  components/
+    PersonalFooter.vue
+  layouts/
+    home.layout.vue
+  pages/
+    index.page.md
+  _default.page.route.ts
+```
+
+Afterwards, you can now see a personal website demo at http://localhost:3000.
+
+## Write a new page
+Writing a new page is as simple as creating a file named `<name>.page.md` under `src/pages/`. The resulting page will be placed at url `/<name>`. Let's create a `src/pages/contact.page.md` and give the following content:
+
+```markdown
+---
+title: Personal | Contact
+layout: home
+---
+# Contact
+My address is ...
+```
+
+Visit http://localhost:3000/blog to see your new page!
+
+## Customize design
+You may have noticed that `index.page.md` and `contact.page.md` share the same `layout` field in the frontmatter (`home`). Therefore, they also share the same visual layout. To design the looks of your page, you may want to modify layout components under `src/layouts/`.
+
+Let's add a navbar to let us switch between the index page and the contact page. To do so, we modify the content in `src/layouts/home.layout.vue`:
+
+```html
+<template>
+  <nav class="py-6">
+    <ul class="flex justify-center space-x-4 font-medium">
+      <li><a-router href="/">home</a-router></li>
+      <li><a-router href="/contact">contact</a-router></li>
+    </ul>
+  </nav>
+  <main class="px-4 py-10 max-w-3xl mx-auto prose text-gray-700">
+    <slot />
+  </main>
+  <PersonalFooter class="px-4 pb-10 max-w-3xl mx-auto" />
+</template>
+<script lang="ts" setup>
+import PersonalFooter from '../components/PersonalFooter.vue'
+</script>
+```
+
+Here we include a navbar, and specify the design of it using [Tailwind](https://tailwindcss.com/) / [WindiCSS](https://windicss.org/) utility classes.
+
+## Publish website
+After we are satisfied with the design of our website, now it's time to publish it to the world.
+
+In many cases, using a static site hosting service is enough to host our pages. VPage provides setup for [GitHub Pages](https://pages.github.com/) and [Netlify](https://www.netlify.com/), so that you can deploy with them without any configuration. Both of them require your website source code to be managed on GitHub.
+
+
+### GitHub Pages
+To deploy using GitHub Pages, go to your project Settings -> Pages -> Source, select the auto-built branch `gh-pages` as page source.
+
+### Netlify
+To deploy using Netlify, visit https://app.netlify.com and choose New Site from Git. Follow the instructions to connect to your GitHub project.
+
+### Manual deploy
+You can also build the whole site and deploy it manually.
+
+First, build the whole site with:
 ```bash
-$ iwr https://deno.land/x/install/install.ps1 -useb | iex
+npm run build
 ```
 
-Homebrew (Mac):
+This will build `dist/client/` and `dist/server/` directories. For static websites, you can upload `dist/client/` directory to your server, and configure a web server to serve them (e.g. Nginx).
+
+If you need SSR, you can just run the following (you must build the website first):
 ```bash
-$ brew install deno
+npm run serve
 ```
-
-## Getting Started
-Try running a simple program:
-
-```bash
-$ deno run https://deno.land/std/examples/welcome.ts
-```
-
-Or a more complex one:
-```ts
-import { serve } from "https://deno.land/std@0.116.0/http/server.ts";
-
-console.log("http://localhost:8000/");
-serve((req) => new Response("Hello World\n"), { addr: ":8000" });
-```
-
-You can find a more in depth introduction, examples, and environment setup guides in the manual.
-
-## Runtime Documentation
-The basic runtime documentation for Deno can be found on doc.deno.land.
-
-Deno comes with a manual which contains more in depth explanations about the more complex functions of the runtime, an introduction to the concepts that Deno is built on, details about the internals of Deno, how to embed Deno in your own application and how to extend Deno using Rust plugins.
-
-The manual also contains information about the built in tools that Deno provides.
-
-## Standard Modules
-Next to the Deno runtime, Deno also provides a list of audited standard modules that are reviewed by the Deno maintainers and are guaranteed to work with a specific Deno version. These live in the denoland/deno_std repository.
-
-These standard modules are hosted at deno.land/std and are distributed via URLs like all other ES modules that are compatible with Deno.
-
-## Third Party Modules
-Deno can import modules from any location on the web, like GitHub, a personal webserver, or a CDN like Skypack, jspm.io, jsDelivr or esm.sh.
-
-To make it easier to consume third party modules Deno provides some built in tooling like deno info and deno doc. deno.land also provides a web UI for viewing module documentation. It is available at doc.deno.land.
-
-deno.land also provides a simple public hosting service for ES modules that work with Deno. It can be found at deno.land/x.
