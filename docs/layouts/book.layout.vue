@@ -115,7 +115,7 @@
 
     <header class="col-start-2 px-6 py-4 flex items-center justify-between">
       <button
-        class="text-2xl font-medium text-gray-400 px-3 py-1 rounded hover:bg-gray-100 focus:outline-none"
+        class="-ml-2.5 text-2xl font-medium text-gray-400 px-3 py-1 rounded hover:bg-gray-100 focus:outline-none"
         @click="toggleAside"
       >
         ≡
