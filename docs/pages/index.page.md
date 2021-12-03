@@ -1,6 +1,6 @@
 ---
-title: VPage | Docs
-layout: doc
+title: Getting Started - VPage Docs
+layout: book
 ---
 
 # Documentation
