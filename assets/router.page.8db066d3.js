@@ -1,0 +1,1 @@
+import{o,c as e,l as r}from"./vendor.310ed871.js";const s={class:"markdown-body"},a=r("h1",{id:"router",tabindex:"-1"},"Router",-1),c=[a],u={title:"Router - VPage Docs",layout:"book"},m={setup(n,{expose:t}){return t({frontmatter:{title:"Router - VPage Docs",layout:"book"}}),(_,i)=>(o(),e("div",s,c))}};export{m as default,u as frontmatter};
