@@ -1,5 +1,5 @@
 ---
-title: Project | HOME
+title: Recycle
 meta:
   - name: description
     content: Project home page

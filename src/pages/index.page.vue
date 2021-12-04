@@ -18,7 +18,7 @@
 
 <script lang="ts">
 export const frontmatter = {
-  title: 'VPage | Home',
+  title: 'VPage',
 }
 </script>
 

@@ -1,5 +1,5 @@
 ---
-title: Personal | HOME
+title: Harry Potter
 layout: home
 ---
 
