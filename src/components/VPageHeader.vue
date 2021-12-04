@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mx-auto py-8 flex items-center justify-between px-4 w-full max-w-screen-sm lg:max-w-screen-lg"
+    class="mx-auto py-8 flex items-center justify-between px-4 w-full max-w-3xl lg:max-w-screen-lg"
   >
     <a-router href="/" class="font-serif text-3xl font-bold text-gray-400">
       <span class="text-green-900">V</span
