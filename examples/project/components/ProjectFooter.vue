@@ -12,7 +12,8 @@
     </a-router>
 
     <div class="mt-4 md:mt-0">
-      2021 © The Recycle Team. All rights reserved.
+      <a-router href="/">VPage</a-router> 2021 © The Recycle Team. All rights
+      reserved.
     </div>
   </div>
 </template>
