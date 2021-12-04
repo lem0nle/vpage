@@ -3,9 +3,10 @@
     class="absolute inset-0 grid grid-cols-[auto,1fr] grid-rows-[auto,1fr]"
   >
     <aside
-      class="w-64 row-span-2 overflow-scroll bg-gray-50 p-6"
+      class="row-span-2 overflow-scroll bg-gray-50 py-6"
       :class="{
-        'w-0 px-0': !asideVisible,
+        'w-64 px-6 md:w-0 md:px-0': !asideVisible,
+        'w-0 px-0 md:w-64 md:px-6': asideVisible,
       }"
     >
       <a-router
