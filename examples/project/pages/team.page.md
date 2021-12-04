@@ -17,7 +17,7 @@ layout: page
 <span class="text-sm text-gray-400">Founder, Software Developer</span>
 
 * 👩‍🎓 I'm a Ph.D. candidate from [USTC](https://ustc.edu.cn), majoring in Computer Science.
-* 🥸 My life motto is, _"stay cool and have fun"_.
+* 🥸 My life motto is, *"stay cool and have fun"*.
 * 🦆 My name looks like French and sounds like French, but it's actually Chinese.
 * 🇩🇪 I've been learning German since 2020.
 * 🧙‍♀️ My recent reading list includes Harry Potter and Sherlock Holmes stories.

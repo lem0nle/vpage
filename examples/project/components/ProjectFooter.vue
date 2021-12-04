@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mx-auto flex items-center justify-between px-4 max-w-screen-sm lg:max-w-screen-lg mt-24 mb-12 text-gray-300"
+    class="mx-auto md:flex items-center justify-between px-4 max-w-screen-sm lg:max-w-screen-lg mt-24 mb-12 text-gray-300"
   >
     <a-router class="flex items-center" href="/demos/project">
       <span
@@ -11,6 +11,8 @@
       <span class="ml-2 font-bold text-base text-gray-900">Recycle</span>
     </a-router>
 
-    <div>2021 © The Recycle Team. All rights reserved.</div>
+    <div class="mt-4 md:mt-0">
+      2021 © The Recycle Team. All rights reserved.
+    </div>
   </div>
 </template>

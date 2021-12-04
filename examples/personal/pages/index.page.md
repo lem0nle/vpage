@@ -5,7 +5,7 @@ layout: home
 
 # ⚡️ Me
 
-<img class="h-36 rounded float-right ml-6" src="../assets/group.gif">
+<img class="rounded w-full sm:(w-auto h-36 ml-6 float-right)" src="../assets/group.gif">
 
 My name is Harry Potter, and I'm currently living in London, England. I went to Hogwarts School of Witchcraft and Wizardry for magic education, where I made two important friends, Ron and Hermione, and met the love of my life Ginny. Among all the subjects in Hogwarts, my favourite ones are Defence Against the Dark Arts and Flying, while my least favourite is Potions. Well, Snape and I never liked each other. I graduated to be an Auror after the Second Wizarding War.
 
