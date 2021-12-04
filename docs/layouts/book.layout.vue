@@ -3,9 +3,10 @@
     class="absolute inset-0 grid grid-cols-[auto,1fr] grid-rows-[auto,1fr]"
   >
     <aside
-      class="w-64 row-span-2 overflow-scroll bg-gray-50 p-6"
+      class="row-span-2 overflow-scroll bg-gray-50 py-6"
       :class="{
-        'w-0 px-0': !asideVisible,
+        'w-64 px-6 md:w-0 md:px-0': !asideVisible,
+        'w-0 px-0 md:w-64 md:px-6': asideVisible,
       }"
     >
       <a-router
@@ -17,6 +18,9 @@
       <hr class="mt-4" />
       <nav class="mt-6">
         <ul class="space-y-4">
+          <li>
+            <NavLink class="font-semibold" href="/docs"> Introduction </NavLink>
+          </li>
           <li>
             <NavLink class="font-semibold" href="/docs/installation">
               Installation
@@ -38,27 +42,27 @@
             </ul>
           </li>
           <li>
-            <NavLink class="font-semibold" href="/docs">
+            <NavLink class="font-semibold" href="/docs/getting-started">
               Getting Started
             </NavLink>
             <ul class="ml-4 mt-2 space-y-1">
               <li>
-                <a-router href="/docs#start-from-an-example">
+                <a-router href="/docs/getting-started#start-from-an-example">
                   Start from an example
                 </a-router>
               </li>
               <li>
-                <a-router href="/docs#write-a-new-page">
+                <a-router href="/docs/getting-started#write-a-new-page">
                   Write a new page
                 </a-router>
               </li>
               <li>
-                <a-router href="/docs#customize-design">
+                <a-router href="/docs/getting-started#customize-design">
                   Customize design
                 </a-router>
               </li>
               <li>
-                <a-router href="/docs#publish-website">
+                <a-router href="/docs/getting-started#publish-website">
                   Publish website
                 </a-router>
               </li>
