@@ -1,6 +1,6 @@
 ---
 title: VPage | Demos
-layout: home
+layout: page
 ---
 
 # Demos
