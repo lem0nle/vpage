@@ -17,8 +17,8 @@ project/                      # or /personal
   _default.page.route.ts      # page routing
 ```
 
-## ♻️ [Project](/demos/project)
+## ♻️ <a-router href="/demos/project" target="_blank" rel="noopener">Project</a-router>
 We design a project called **Recycle** for environmentally friendly Recycling. It contains common pages in a real project, such as a *blog* page and a *team* page. You can easily adapt this example to any other projects or products.
 
-## 🧙‍♂️ [Personal](/demos/personal)
+## 🧙‍♂️ <a-router href="/demos/personal" target="_blank" rel="noopener">Personal</a-router>
 We make a personal homepage for **Harry Potter** telling some of his early adventures. Hope you have fun making one for yourself too.
