@@ -18,6 +18,9 @@
       <nav class="mt-6">
         <ul class="space-y-4">
           <li>
+            <NavLink class="font-semibold" href="/docs"> Introduction </NavLink>
+          </li>
+          <li>
             <NavLink class="font-semibold" href="/docs/installation">
               Installation
             </NavLink>
@@ -38,27 +41,27 @@
             </ul>
           </li>
           <li>
-            <NavLink class="font-semibold" href="/docs">
+            <NavLink class="font-semibold" href="/docs/getting-started">
               Getting Started
             </NavLink>
             <ul class="ml-4 mt-2 space-y-1">
               <li>
-                <a-router href="/docs#start-from-an-example">
+                <a-router href="/docs/getting-started#start-from-an-example">
                   Start from an example
                 </a-router>
               </li>
               <li>
-                <a-router href="/docs#write-a-new-page">
+                <a-router href="/docs/getting-started#write-a-new-page">
                   Write a new page
                 </a-router>
               </li>
               <li>
-                <a-router href="/docs#customize-design">
+                <a-router href="/docs/getting-started#customize-design">
                   Customize design
                 </a-router>
               </li>
               <li>
-                <a-router href="/docs#publish-website">
+                <a-router href="/docs/getting-started#publish-website">
                   Publish website
                 </a-router>
               </li>
