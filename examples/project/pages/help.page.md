@@ -1,5 +1,5 @@
 ---
-title: Project | Help
+title: Recycle | Help
 meta:
   - name: description
     content: Get help

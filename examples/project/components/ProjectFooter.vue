@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mx-auto md:flex items-center justify-between px-4 max-w-screen-sm lg:max-w-screen-lg mt-24 mb-12 text-gray-300"
+    class="mx-auto md:flex items-center justify-between px-4 max-w-screen-sm lg:max-w-screen-lg mt-24 mb-12 text-gray-400"
   >
     <a-router class="flex items-center" href="/demos/project">
       <span

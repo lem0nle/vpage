@@ -1,5 +1,5 @@
 ---
-title: Project | Blog
+title: Recycle | Blog
 meta:
   - name: description
     content: Blogs about this project

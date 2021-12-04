@@ -1,5 +1,5 @@
 ---
-title: Project | Team
+title: Recycle | Team
 meta:
   - name: description
     content: The team behind this project
