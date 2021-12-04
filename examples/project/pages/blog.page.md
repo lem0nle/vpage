@@ -10,13 +10,13 @@ layout: page
 
 ## Version 1.0.0 Released *Today* 🎉
 
-<span class="text-sm font-thin">2021-11-30</span>
+<span class="text-sm font-thin">2021-12-5</span>
 
 We are excited to announce that Recycle has finally become stable, and released version **1.0.0** 🎉🎉
 
 Three main features in this version:
 * Chopstick recyling out of the box.
-* Support for MacOS, Linux and Windows.
+* Support for macOS, Linux and Windows.
 * Experimental support for WebRecycle API.
 
 ---
