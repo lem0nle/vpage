@@ -8,19 +8,22 @@ layout: page
 
 # Blog
 
----
-
 ## Version 1.0.0 Released *Today* 🎉
 
 <span class="text-sm font-thin">2021-11-30</span>
 
 We are excited to announce that Recycle has finally become stable, and released version **1.0.0** 🎉🎉
 
+Three main features in this version:
+* Chopstick recyling out of the box.
+* Support for MacOS, Linux and Windows.
+* Experimental support for WebRecycle API.
+
 ---
 
 ## Add support for recycling chopsticks 🥢
 
-<span class="text-sm font-thin">2021-10-24</span>
+<span class="text-sm font-thin">2021-11-20</span>
 
 Many chopsticks are made of wood. Let's recycle chopsticks!
 
@@ -28,6 +31,6 @@ Many chopsticks are made of wood. Let's recycle chopsticks!
 
 ## Project Launched 🚀
 
-<span class="text-sm font-thin">2021-05-23</span>
+<span class="text-sm font-thin">2021-10-31</span>
 
 The Recycle project launched, today!

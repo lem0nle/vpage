@@ -12,10 +12,12 @@
       <h2
         class="mt-4 sm:mt-5 font-light text-2xl text-center leading-tight text-gray-900"
       >
-        A modern runtime for JavaScript and TypeScript.
+        A project for
+        <span class="font-bold">environmentally friendly</span>
+        Recycling.
       </h2>
       <a-router
-        href="/demo/project/help"
+        href="/demos/project/help"
         class="rounded-full mt-8 px-8 py-2 transition-colors duration-75 ease-in-out bg-blue-500 hover:bg-blue-400 text-white text-lg shadow-lg"
       >
         Get Help

@@ -4,7 +4,8 @@ import typography from 'windicss/plugin/typography'
 
 export default defineConfig({
   preflight: {
-    safelist: 'h1 h2 h3 p ul ol li img hr blockquote code pre',
+    safelist:
+      'h1 h2 h3 p ul ol li img hr blockquote code pre table thead tbody tr th td',
   },
   extract: {
     include: [
