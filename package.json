@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@vueuse/head": "^0.7.2",
-    "@yxonic/vmark": "^0.1.23",
+    "@yxonic/vmark": "^0.1.24",
     "vue": "^3.2.26",
     "windicss": "^3.2.1"
   },
@@ -41,7 +41,7 @@
     "unplugin-icons": "^0.12.18",
     "unplugin-vue-components": "^0.17.9",
     "vite": "^2.7.3",
-    "vite-plugin-ssr": "^0.3.31",
+    "vite-plugin-ssr": "^0.3.39",
     "vite-plugin-windicss": "^1.5.1"
   },
   "lint-staged": {
