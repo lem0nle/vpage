@@ -2,17 +2,17 @@
   <div
     class="mx-auto py-8 flex items-center justify-between px-4 w-full max-w-3xl lg:max-w-screen-lg"
   >
-    <a href="/" class="font-serif text-3xl font-bold text-gray-400">
+    <a-router href="/" class="font-serif text-3xl font-bold text-gray-400">
       <span class="text-green-900">V</span
       ><span class="underline underline-gray-200 text-orange-600 opacity-90"
         >Page</span
       >
-    </a>
+    </a-router>
     <div
       class="text-md font-medium space-x-6 md:space-x-12 text-gray-700 flex items-center"
     >
-      <a href="/demos">DEMOS</a>
-      <a href="/docs">DOCS</a>
+      <a-router href="/demos">DEMOS</a-router>
+      <a-router href="/docs">DOCS</a-router>
       <a
         class="h-6"
         href="https://github.com/lem0nle/vpage"

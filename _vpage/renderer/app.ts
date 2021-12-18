@@ -6,6 +6,7 @@ import {
   createSSRApp,
   ComponentOptions,
 } from 'vue'
+import RouterLink from './routerLink'
 import { createHead, useHead } from '@vueuse/head'
 import { resolveLayoutComponent } from './layout'
 import { PageContext, providePageContext } from '../lib/context'
@@ -47,6 +48,8 @@ export async function createApp(ctx: PageContext) {
 
   const head = createHead()
   app.use(head)
+
+  app.component('ARouter', RouterLink)
 
   return { app, head, context, frontmatter, layout }
 }
