@@ -1,12 +1,12 @@
 <template>
-  <a-router
+  <a
     :href="href"
     :class="{
       [activeClass || 'text-blue-700']: pathname == href,
     }"
   >
     <slot></slot>
-  </a-router>
+  </a>
 </template>
 <script lang="ts" setup>
 import { useCurrentUrl } from 'vpage/router'

@@ -43,7 +43,8 @@ async function startServer() {
     const { statusCode, contentType } = httpResponse
 
     res.status(statusCode).type(contentType)
-    httpResponse.bodyNodeStream.pipe(res)
+    const stream = await httpResponse.getNodeStream()
+    stream.pipe(res)
   })
 
   const port = process.env.PORT || 3000

@@ -8,7 +8,6 @@ import {
 } from 'vue'
 import { createHead, useHead } from '@vueuse/head'
 import { resolveLayoutComponent } from './layout'
-import RouterLink from './RouterLink.vue'
 import { PageContext, providePageContext } from '../lib/context'
 
 export async function createApp(ctx: PageContext) {
@@ -48,9 +47,6 @@ export async function createApp(ctx: PageContext) {
 
   const head = createHead()
   app.use(head)
-
-  // eslint-disable-next-line vue/component-definition-name-casing
-  app.component('a-router', RouterLink)
 
   return { app, head, context, frontmatter, layout }
 }
