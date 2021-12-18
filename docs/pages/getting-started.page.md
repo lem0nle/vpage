@@ -54,8 +54,8 @@ Let's add a navbar to let us switch between the index page and the contact page.
 <template>
   <nav class="py-6">
     <ul class="flex justify-center space-x-4 font-medium">
-      <li><a-router href="/">home</a-router></li>
-      <li><a-router href="/contact">contact</a-router></li>
+      <li><a href="/">home</a></li>
+      <li><a href="/contact">contact</a></li>
     </ul>
   </nav>
   <main class="px-4 py-10 max-w-3xl mx-auto prose text-gray-700">

@@ -3,6 +3,8 @@ import { hydrate } from 'vpage/client'
 hydrate()
 
 // to setup client router globally, replace the above with:
-
 // import { setupClientRouter } from 'vpage/router'
 // setupClientRouter()
+
+// import global styles here
+import 'virtual:windi.css'

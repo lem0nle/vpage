@@ -9,12 +9,9 @@
         'w-0 px-0 md:w-64 md:px-6': asideVisible,
       }"
     >
-      <a-router
-        href="/"
-        class="flex text-lg font-serif font-bold justify-center"
-      >
+      <a href="/" class="flex text-lg font-serif font-bold justify-center">
         VPage
-      </a-router>
+      </a>
       <hr class="mt-4" />
       <nav class="mt-6">
         <ul class="space-y-4">
@@ -27,17 +24,15 @@
             </NavLink>
             <ul class="ml-4 mt-2 space-y-1">
               <li>
-                <a-router href="/docs/installation#requirements">
-                  Requirements
-                </a-router>
+                <a href="/docs/installation#requirements"> Requirements </a>
               </li>
               <li>
-                <a-router href="/docs/installation#install"> Install </a-router>
+                <a href="/docs/installation#install"> Install </a>
               </li>
               <li>
-                <a-router href="/docs/installation#run-development-server">
+                <a href="/docs/installation#run-development-server">
                   Run development server
-                </a-router>
+                </a>
               </li>
             </ul>
           </li>
@@ -47,24 +42,24 @@
             </NavLink>
             <ul class="ml-4 mt-2 space-y-1">
               <li>
-                <a-router href="/docs/getting-started#start-from-an-example">
+                <a href="/docs/getting-started#start-from-an-example">
                   Start from an example
-                </a-router>
+                </a>
               </li>
               <li>
-                <a-router href="/docs/getting-started#write-a-new-page">
+                <a href="/docs/getting-started#write-a-new-page">
                   Write a new page
-                </a-router>
+                </a>
               </li>
               <li>
-                <a-router href="/docs/getting-started#customize-design">
+                <a href="/docs/getting-started#customize-design">
                   Customize design
-                </a-router>
+                </a>
               </li>
               <li>
-                <a-router href="/docs/getting-started#publish-website">
+                <a href="/docs/getting-started#publish-website">
                   Publish website
-                </a-router>
+                </a>
               </li>
             </ul>
           </li>

@@ -25,15 +25,8 @@ export default defineConfig({
     VMark(),
     WindiCSS(),
     Components({
-      extensions: ['vue', 'md'],
-      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      exclude: [/\/node_modules\//, /\/.git\//],
+      extensions: ['vue'],
       resolvers: [IconsResolver()],
-      dirs: [
-        'src/components',
-        // include all demo components
-        'examples/**/components',
-      ],
     }),
     Icons({
       autoInstall: true,
