@@ -10,27 +10,26 @@
       }"
     >
       <aside
-        class="fixed inset-0 md:w-64 overflow-scroll bg-gray-50 p-6 transition ease-in-out transform"
+        class="fixed inset-0 md:w-64 overflow-scroll bg-gray-50 z-10 p-6 transition ease-in-out transform"
         :class="{
           'md:-translate-x-64': !defaultLayout,
           'hidden md:block md:translate-x-0': defaultLayout,
         }"
       >
-        <button
-          v-if="!defaultLayout"
-          class="md:hidden absolute top-6 right-6 text-xl text-gray-400 focus:outline-none"
-          @click="toggleLayout"
-        >
-          ×
-        </button>
-        <a-router
-          href="/"
-          class="flex text-lg font-serif font-bold justify-center"
-        >
-          VPage
-        </a-router>
+        <div class="flex justify-center">
+          <a-router href="/" class="text-lg font-serif font-bold">
+            VPage
+          </a-router>
+          <button
+            v-if="!defaultLayout"
+            class="md:hidden absolute top-5 left-6 text-2xl text-gray-400 hover:text-gray-300 focus:outline-none"
+            @click="toggleLayout"
+          >
+            ×
+          </button>
+        </div>
         <hr class="mt-4" />
-        <nav class="mt-6">
+        <nav class="mt-6 overflow-hidden">
           <ul class="space-y-4">
             <li>
               <NavLink class="font-semibold" href="/docs">
