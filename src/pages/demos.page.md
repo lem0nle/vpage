@@ -3,8 +3,9 @@ title: VPage | Demos
 layout: page
 ---
 
-# Demos
-Here we demonstrate the usage of VPage with two examples, a multi-page project website and a single-page personal homepage, showing the simple but powerful side of VPage. 
+# Demos <i-mi-tag class="inline-block -mt-1 text-2xl" />
+
+Here we demonstrate the usage of VPage with two examples, a multi-page project website and a single-page personal homepage, showing the simple but powerful side of VPage.
 
 Both examples are organized in the same way, containing mainly three parts: `pages/`, `layouts/` and `components/`. We provide for you to write page content directly with **Markdown** in `pages/`, organize the page layout in `layouts/` and write reusable **Vue** component in `components/`.
 

@@ -3,11 +3,10 @@ import { defineConfig } from 'vite'
 // plugins
 import SSR from 'vite-plugin-ssr/plugin'
 import Vue from '@vitejs/plugin-vue'
-import VMark from '@yxonic/vmark/vite'
 import WindiCSS from 'vite-plugin-windicss'
 import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
-import Components from 'unplugin-vue-components/vite'
+import IconResolver from 'unplugin-icons/resolver'
+import VMark from '@yxonic/vmark/vite'
 
 const base = process.env.BASE_URL || '/'
 
@@ -22,14 +21,17 @@ export default defineConfig({
   plugins: [
     SSR(),
     Vue(),
-    VMark(),
     WindiCSS(),
-    Components({
-      extensions: ['vue'],
-      resolvers: [IconsResolver()],
-    }),
-    Icons({
-      autoInstall: true,
+    Icons({ autoInstall: true }),
+    VMark({
+      componentResolver: [IconResolver()],
+      defaultComponentDir: path.resolve(__dirname, 'src/components'),
+      componentDirResolver: (id) => {
+        const path = id.split('/')
+        return (
+          path.slice(0, path.lastIndexOf('pages')).join('/') + '/components/'
+        )
+      },
     }),
   ],
 })
