@@ -12,7 +12,7 @@
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "strictNullChecks": true,
-    "types": ["vite/client", "./node_modules/@yxonic/vmark/types"],
+    "types": ["vite/client", "@yxonic/vmark/types"],
     "paths": {
       "@/*": ["src/*"],
       "vpage/*": ["_vpage/lib/*"]
