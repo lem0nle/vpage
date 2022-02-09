@@ -1,0 +1,1 @@
+import{V as o,a as s}from"./VPageFooter.41fa21bc.js";import{d as r,o as t,f as n,l as e,j as c,q as p,F as l}from"./vendor.b085b7ce.js";import"./plugin-vue_export-helper.21dcd24c.js";const d={class:"px-4 py-16 prose max-w-3xl mx-auto"},x=r({setup(m){return(a,u)=>(t(),n(l,null,[e(o),c("main",d,[p(a.$slots,"default")]),e(s)],64))}});export{x as default};

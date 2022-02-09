@@ -1,0 +1,1 @@
+import{h as e}from"./vendor.b085b7ce.js";const o=[e("h1",{},["SEO"]),e("p",{},[e("em",{},["TBA"])])],r={title:"SEO - VPage Docs",layout:"book"};var a={render(){return o}};export{a as default,r as frontmatter,o as nodes};
