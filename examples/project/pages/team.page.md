@@ -14,7 +14,8 @@ layout: page
 <img class="h-20 !my-0 rounded-full float-right ml-6" src="../assets/lem0nle.jpg" />
 
 ### [lem0nle](https://github.com/lem0nle) (Le Dai)
-<span class="text-sm text-gray-400">Founder, Software Developer</span>
+
+<div class="text-sm text-gray-400">Founder, Software Developer</div>
 
 * 👩‍🎓 I'm a Ph.D. candidate from [USTC](https://ustc.edu.cn), majoring in Computer Science.
 * 🥸 My life motto is, *"stay cool and have fun"*.
@@ -25,7 +26,8 @@ layout: page
 <img class="h-20 !my-0 rounded-full float-right ml-6" src="../assets/yxonic.jpg" />
 
 ### [yxonic](https://github.com/yxonic) (Yu Yin)
-<span class="text-sm text-gray-400">Founder, Software Architect</span>
+
+<div class="text-sm text-gray-400">Founder, Software Architect</div>
 
 * 👨🏻‍💻 I'm a programmer, data scientist, and web designer.
 * 🎓 Check out some publications of mine [here](https://base.ustc.edu.cn/publications).

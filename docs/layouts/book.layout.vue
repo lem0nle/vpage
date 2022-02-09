@@ -2,125 +2,143 @@
   <article
     class="absolute inset-0 grid grid-cols-[auto,1fr] grid-rows-[auto,1fr]"
   >
-    <aside
-      class="row-span-2 overflow-scroll bg-gray-50 py-6"
+    <div
+      class="row-span-2 overflow-hidden"
       :class="{
-        'w-64 px-6 md:w-0 md:px-0': !asideVisible,
-        'w-0 px-0 md:w-64 md:px-6': asideVisible,
+        'md:w-0': !defaultLayout,
+        'w-0 md:w-64': defaultLayout,
       }"
     >
-      <a-router
-        href="/"
-        class="flex text-lg font-serif font-bold justify-center"
+      <aside
+        class="fixed inset-0 md:w-64 overflow-scroll bg-gray-50 z-10 p-6 transition ease-in-out transform"
+        :class="{
+          'md:-translate-x-64': !defaultLayout,
+          'hidden md:block md:translate-x-0': defaultLayout,
+        }"
       >
-        VPage
-      </a-router>
-      <hr class="mt-4" />
-      <nav class="mt-6">
-        <ul class="space-y-4">
-          <li>
-            <NavLink class="font-semibold" href="/docs"> Introduction </NavLink>
-          </li>
-          <li>
-            <NavLink class="font-semibold" href="/docs/installation">
-              Installation
-            </NavLink>
-            <ul class="ml-4 mt-2 space-y-1">
-              <li>
-                <a-router href="/docs/installation#requirements">
-                  Requirements
-                </a-router>
-              </li>
-              <li>
-                <a-router href="/docs/installation#install"> Install </a-router>
-              </li>
-              <li>
-                <a-router href="/docs/installation#run-development-server">
-                  Run development server
-                </a-router>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <NavLink class="font-semibold" href="/docs/getting-started">
-              Getting Started
-            </NavLink>
-            <ul class="ml-4 mt-2 space-y-1">
-              <li>
-                <a-router href="/docs/getting-started#start-from-an-example">
-                  Start from an example
-                </a-router>
-              </li>
-              <li>
-                <a-router href="/docs/getting-started#write-a-new-page">
-                  Write a new page
-                </a-router>
-              </li>
-              <li>
-                <a-router href="/docs/getting-started#customize-design">
-                  Customize design
-                </a-router>
-              </li>
-              <li>
-                <a-router href="/docs/getting-started#publish-website">
-                  Publish website
-                </a-router>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <div class="font-semibold">Advanced</div>
-            <ul class="ml-4 mt-2 space-y-1">
-              <li>
-                <NavLink
-                  href="/docs/advanced/architecture"
-                  active-class="text-blue-700 font-medium"
-                >
-                  Architecture
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  href="/docs/advanced/router"
-                  active-class="text-blue-700 font-medium"
-                >
-                  Router
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  href="/docs/advanced/organize"
-                  active-class="text-blue-700 font-medium"
-                >
-                  Organize a large website
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  href="/docs/advanced/seo"
-                  active-class="text-blue-700 font-medium"
-                >
-                  SEO
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  href="/docs/advanced/data"
-                  active-class="text-blue-700 font-medium"
-                >
-                  Data fetching
-                </NavLink>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </aside>
+        <div class="flex justify-center">
+          <a-router href="/" class="text-lg font-serif font-bold">
+            VPage
+          </a-router>
+          <button
+            v-if="!defaultLayout"
+            class="md:hidden absolute top-5 left-6 text-2xl text-gray-400 hover:text-gray-300 focus:outline-none"
+            @click="toggleLayout"
+          >
+            ×
+          </button>
+        </div>
+        <hr class="mt-4" />
+        <nav class="mt-6 overflow-hidden">
+          <ul class="space-y-4">
+            <li>
+              <NavLink class="font-semibold" href="/docs">
+                Introduction
+              </NavLink>
+            </li>
+            <li>
+              <NavLink class="font-semibold" href="/docs/installation">
+                Installation
+              </NavLink>
+              <ul class="ml-4 mt-2 space-y-1">
+                <li>
+                  <a-router href="/docs/installation#requirements">
+                    Requirements
+                  </a-router>
+                </li>
+                <li>
+                  <a-router href="/docs/installation#install">
+                    Install
+                  </a-router>
+                </li>
+                <li>
+                  <a-router href="/docs/installation#run-development-server">
+                    Run development server
+                  </a-router>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <NavLink class="font-semibold" href="/docs/getting-started">
+                Getting Started
+              </NavLink>
+              <ul class="ml-4 mt-2 space-y-1">
+                <li>
+                  <a-router href="/docs/getting-started#start-from-an-example">
+                    Start from an example
+                  </a-router>
+                </li>
+                <li>
+                  <a-router href="/docs/getting-started#write-a-new-page">
+                    Write a new page
+                  </a-router>
+                </li>
+                <li>
+                  <a-router href="/docs/getting-started#customize-design">
+                    Customize design
+                  </a-router>
+                </li>
+                <li>
+                  <a-router href="/docs/getting-started#publish-website">
+                    Publish website
+                  </a-router>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="font-semibold">Advanced</div>
+              <ul class="ml-4 mt-2 space-y-1">
+                <li>
+                  <NavLink
+                    href="/docs/advanced/architecture"
+                    active-class="text-blue-700 font-medium"
+                  >
+                    Architecture
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    href="/docs/advanced/router"
+                    active-class="text-blue-700 font-medium"
+                  >
+                    Router
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    href="/docs/advanced/organize"
+                    active-class="text-blue-700 font-medium"
+                  >
+                    Organize a large website
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    href="/docs/advanced/seo"
+                    active-class="text-blue-700 font-medium"
+                  >
+                    SEO
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    href="/docs/advanced/data"
+                    active-class="text-blue-700 font-medium"
+                  >
+                    Data fetching
+                  </NavLink>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
 
     <header class="col-start-2 px-6 py-4 flex items-center justify-between">
       <button
         class="-ml-2.5 text-2xl font-medium text-gray-400 px-3 py-1 rounded hover:bg-gray-100 focus:outline-none"
-        @click="toggleAside"
+        @click="toggleLayout"
       >
         ≡
       </button>
@@ -158,6 +176,6 @@
 import { ref } from 'vue'
 import NavLink from '../components/NavLink.vue'
 
-const asideVisible = ref(true)
-const toggleAside = () => (asideVisible.value = !asideVisible.value)
+const defaultLayout = ref(true)
+const toggleLayout = () => (defaultLayout.value = !defaultLayout.value)
 </script>

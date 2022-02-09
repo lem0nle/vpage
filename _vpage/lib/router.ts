@@ -1,6 +1,5 @@
 import { Ref, ComponentOptions, computed } from 'vue'
 import { useClientRouter } from 'vite-plugin-ssr/client/router'
-import '../browser/main.ts'
 import { createApp } from '../renderer/app'
 import { resolveLayoutComponent } from '../renderer/layout'
 import { PageContext, usePageContext } from './context'
