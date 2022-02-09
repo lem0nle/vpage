@@ -16,12 +16,12 @@
         <span class="font-bold">environmentally friendly</span>
         Recycling.
       </h2>
-      <a
+      <a-router
         href="/demos/project/help"
         class="rounded-full mt-8 px-8 py-2 transition-colors duration-75 ease-in-out bg-blue-500 hover:bg-blue-400 text-white text-lg shadow-lg"
       >
         Get Help
-      </a>
+      </a-router>
     </div>
   </div>
 </template>
